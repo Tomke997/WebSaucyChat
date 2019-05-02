@@ -1,17 +1,36 @@
-<div style="height:200px;width:300px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-  <div  *ngFor="let message of allMessages$ | async">
-    <div >
-      {{message.text}}
-      <div style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
+<div class="chat_box">
+  <div class="chat_logs">
+
+    <div *ngFor="let message of allMessages$ | async">
+
+    <div  class="chat self" *ngIf="message.userId === 'UserNo1'">   <!--CURRENT USER-->
+      <div class="user_photo"></div>
+      <div class="user_message">
+        {{message.text}}
+        <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
+      </div>
     </div>
-</div>
-  <div>
-    <form (ngSubmit)="onSendClick()">
-      <input type="file" (change)="uploadNewImage($event)"  accept="image/*"/>
-      <input style="width:242px;border-radius: 24px" type="text" [formControl]="messageForm">
-      <input type="submit" value="SEND">
-    </form>
+
+    <div  class="chat friend" *ngIf="message.userId !== 'UserNo1'"> <!--SOMEONE ELSE-->
+      <div class="user_photo"></div>
+      <div class="user_message">
+        {{message.text}}
+        <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
+      </div>
+    </div>
+
+    </div>
+
   </div>
+
+
+    <form class="chat_form" (ngSubmit)="onSendClick()">
+      <textarea style="width:242px;height: auto" [formControl]="messageForm"></textarea>
+      <!--<input style="width:242px;height: auto" type="text" [formControl]="messageForm">-->
+      <input type="submit" value="SEND">
+      <input type="file" (change)="uploadNewImage($event)"  accept="image/*"/>
+    </form>
+
 </div>
 
 <image-cropper
@@ -22,6 +41,3 @@
   format="png"
   (imageCropped)="imageCropped($event)"
 ></image-cropper>
-
-<img [src]="croppedImage" />
-

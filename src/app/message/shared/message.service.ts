@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Message} from "./message";
 import {defer, Observable} from "rxjs";
-import {map, tap} from "rxjs/operators";
+import {map} from "rxjs/operators";
 import {AngularFirestore} from "@angular/fire/firestore";
 
 @Injectable({
