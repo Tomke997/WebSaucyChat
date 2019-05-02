@@ -1,9 +1,27 @@
 <div style="height:200px;width:300px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+  <div  *ngFor="let message of allMessages$ | async">
+    <div >
+      {{message.text}}
+      <div style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
+    </div>
 </div>
-  <div style="height:200px;width:300px">
+  <div>
     <form (ngSubmit)="onSendClick()">
-      <input style="width:242px" type="text" [formControl]="messageForm">
+      <input type="file" (change)="uploadNewImage($event)"  accept="image/*"/>
+      <input style="width:242px;border-radius: 24px" type="text" [formControl]="messageForm">
       <input type="submit" value="SEND">
     </form>
   </div>
+</div>
+
+<image-cropper
+  [imageChangedEvent]="imageChangedEvent"
+  [maintainAspectRatio]="true"
+  [aspectRatio]="4 / 3"
+  [resizeToWidth]="128"
+  format="png"
+  (imageCropped)="imageCropped($event)"
+></image-cropper>
+
+<img [src]="croppedImage" />
 
