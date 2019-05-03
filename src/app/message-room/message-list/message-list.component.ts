@@ -4,6 +4,7 @@ import {MessageService} from "../../message/shared/message.service";
 import {Observable} from "rxjs";
 import {Message} from "../../message/shared/message";
 import { ImageCroppedEvent } from 'ngx-image-cropper';
+import {FileService} from "../../file/shared/file.service";
 
 @Component({
   selector: 'app-message-list',
@@ -15,8 +16,9 @@ export class MessageListComponent implements OnInit {
   allMessages$: Observable<Message[]>;
   imageChangedEvent: any = '';
   croppedImage: any = '';
+  fileToUpload: File;
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService, private fs: FileService) { }
 
   ngOnInit() {
     this.allMessages$ = this.messageService.getAllMessages();
@@ -37,6 +39,8 @@ export class MessageListComponent implements OnInit {
 
   uploadNewImage(event) {
     this.imageChangedEvent = event;
+    this.fileToUpload = event.target.files[0];
+    this.fs.sendNewFile(this.fileToUpload, 'stuff for text').subscribe();
   }
   imageCropped(event: ImageCroppedEvent) {
     this.croppedImage = event.base64;

@@ -5,6 +5,7 @@ import {MessageListComponent} from "./message-list/message-list.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MessageService} from "../message/shared/message.service";
 import {ImageCropperModule} from "ngx-image-cropper";
+import {FileService} from "../file/shared/file.service";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {ImageCropperModule} from "ngx-image-cropper";
     ImageCropperModule
   ],
   providers: [
-    MessageService
+    MessageService,
+    FileService
   ]
 })
 export class MessageRoomModule { }

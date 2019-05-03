@@ -70,10 +70,44 @@ exports.triggerNewMessage = functions.firestore
   .document('messages/{messageId}')
   .onCreate((snap, context) => {
  console.log('1 message was created: ' + context.params.messageId);
-
-  });
-
-exports.makarena = functions.https.onRequest((req, resp) => {
-  console.log('simple test');
-  resp.json('dick');
 });
+
+exports.uploadNewMessageImage =
+  functions.storage.object().onFinalize( (object) => {
+    return new Promise(async (resolve, reject) => {
+      if(object && object.name && object.metadata) {
+        // file metadata
+        const fileMeta = {
+          name: object.metadata.originalName,
+          type: 'image/png',
+          size: object.size
+        };
+        // picture id
+        const imageId = object.name.split('/')[1];
+        //create file in file collection
+          await admin.firestore().collection('files')
+          .doc(imageId)
+          .set(fileMeta)
+          .then(value => resolve(value))
+          .catch(err => reject(err));
+         console.log('new file to file collection was added');
+
+         // message metadata
+        const messageMeta = {
+          text: object.metadata.message,
+          time: new Date(),
+          userId: object.metadata.userId,
+          pictureId: imageId
+        };
+         //create new Message
+         admin.firestore().collection('messages')
+          .add(messageMeta)
+          .then(value => resolve(value))
+          .catch(err => reject(err));
+        console.log('new message to message collection was added');
+
+      } else {
+        reject('Error happened, not enough metadata or file data');
+      }
+    });
+  });

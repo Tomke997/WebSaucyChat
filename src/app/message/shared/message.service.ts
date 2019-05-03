@@ -3,36 +3,33 @@ import {Message} from "./message";
 import {defer, Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import {AngularFirestore} from "@angular/fire/firestore";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
 
-  constructor(private db: AngularFirestore) {
+  constructor(private db: AngularFirestore, private http: HttpClient) {
   }
 
   /**
    * create message metadata
    */
-  createNewMessage(messageText: string, pictureId?: string): Message {
+  createNewMessage(messageText: string): Message {
     let newMessage: Message = {
       text: messageText,
       time: new Date(),
       userId: "UserNo1",
     };
-    if(!!pictureId) {
-      newMessage.imageId = pictureId;
-    }
     console.log("message metadata was created");
     return newMessage;
   }
 
   /**
-   * ! firestone
    * send new message without picture
    */
-  sendNewMessage(messageText: string): Observable<Message> {
+  sendNewMessage(messageText: string): Observable<any> {
     let newMessage = this.createNewMessage(messageText);
     const messageCollection = this.db.collection<any>('messages');
     return defer( () =>
@@ -42,10 +39,10 @@ export class MessageService {
       console.log(`new message text: ${newMessage.text} ${newMessage.id}`);
       return newMessage;
     }))
+
   }
 
   /**
-   *  ! firestone
    * get all messages from data and sort them by date
    */
   getAllMessages(): Observable<Message[]>{
