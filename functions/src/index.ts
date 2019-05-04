@@ -72,7 +72,7 @@ exports.triggerNewMessage = functions.firestore
  console.log('1 message was created: ' + context.params.messageId);
 });
 
-exports.uploadNewMessageImage =
+exports.uploadNewImage =
   functions.storage.object().onFinalize( (object) => {
     return new Promise(async (resolve, reject) => {
       if(object && object.name && object.metadata) {
@@ -97,7 +97,7 @@ exports.uploadNewMessageImage =
           text: object.metadata.message,
           time: new Date(),
           userId: object.metadata.userId,
-          pictureId: imageId
+          imageId: imageId
         };
          //create new Message
          admin.firestore().collection('messages')

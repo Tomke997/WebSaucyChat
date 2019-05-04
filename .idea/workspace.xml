@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52d776fa-2018-4e26-a69f-c8fbcb78edda" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/file/shared/file.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase-debug.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/file/shared/file.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/file/shared/file.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/message-room/message-room.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message-room/message-room.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/message/message.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message/message.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/message/shared/message.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message/shared/message.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/message/shared/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message/shared/message.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,12 +21,14 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/functions/src/index.ts">
+        <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="102" column="9" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
+            <state relative-caret-position="391">
+              <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
               <folding>
-                <element signature="e#0#48#0" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,17 +56,17 @@
         <option value="$PROJECT_DIR$/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/src/environments/environment.prod.ts" />
         <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.scss" />
-        <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/app/file/file.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/message/shared/message.ts" />
         <option value="$PROJECT_DIR$/src/app/file/shared/file.ts" />
         <option value="$PROJECT_DIR$/src/app/message/message.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/message/shared/message.service.ts" />
         <option value="$PROJECT_DIR$/src/app/message-room/message-room.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/message/shared/message.ts" />
         <option value="$PROJECT_DIR$/src/app/file/shared/file.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts" />
         <option value="$PROJECT_DIR$/functions/src/index.ts" />
+        <option value="$PROJECT_DIR$/src/app/message/shared/message.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html" />
       </list>
     </option>
   </component>
@@ -211,12 +210,12 @@
       <updated>1556088562879</updated>
       <workItem from="1556088565153" duration="388000" />
       <workItem from="1556090101260" duration="9123000" />
-      <workItem from="1556703914602" duration="32986000" />
+      <workItem from="1556703914602" duration="41320000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42560000" />
+    <option name="totallyTimeSpent" value="50894000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -231,7 +230,7 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -308,22 +307,6 @@
     <entry file="file://$PROJECT_DIR$/functions/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="74" column="1" lean-forward="true" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -351,26 +334,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/message/shared/message.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/file/shared/file.service.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/file/shared/file.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -404,16 +373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/message/shared/message.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -423,32 +382,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/message/shared/message.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/file/shared/file.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/file/shared/file.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+        <state relative-caret-position="401">
+          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="74" column="1" lean-forward="true" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/src/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="74" column="17" lean-forward="true" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/message/shared/message.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="65" column="9" lean-forward="true" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="42" column="58" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
+        <state relative-caret-position="355">
+          <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/src/index.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="102" column="9" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
+        <state relative-caret-position="391">
+          <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
           <folding>
-            <element signature="e#0#48#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

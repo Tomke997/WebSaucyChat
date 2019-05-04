@@ -4,13 +4,14 @@ import {defer, Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import {AngularFirestore} from "@angular/fire/firestore";
 import {HttpClient} from "@angular/common/http";
+import {FileService} from "../../file/shared/file.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
 
-  constructor(private db: AngularFirestore, private http: HttpClient) {
+  constructor(private db: AngularFirestore, private http: HttpClient, private fileService: FileService) {
   }
 
   /**
@@ -51,6 +52,14 @@ export class MessageService {
       value.forEach( message => {
        /* const data = message.data() as Message;*/
         const data = message.payload.doc.data() as Message;
+        //add picture
+
+        if(!!data.imageId) {
+          this.fileService.getPictureUrl(data.imageId).subscribe(value1 => {
+            console.log(value1);
+            data.imageId = value1;
+          })
+        }
         // @ts-ignore
         data.time = new Date(data.time.seconds * 1000);
         return  listOfMessages.push(data);
@@ -58,5 +67,4 @@ export class MessageService {
       return listOfMessages.sort((a, b) => a.time.getTime() - b.time.getTime());
     }));
   }
-
 }

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {AngularFirestore} from "@angular/fire/firestore";
 import {defer, Observable} from "rxjs";
 import {AngularFireStorage} from "@angular/fire/storage";
-import {Message} from "../../message/shared/message";
 import {map} from "rxjs/operators";
 
 @Injectable({
@@ -31,5 +30,10 @@ export class FileService {
         return fileRef;
       })
     );
+  }
+
+  getPictureUrl(id: string): Observable<string> {
+    return this.storage.ref('message-pictures/' + id)
+      .getDownloadURL();
   }
 }

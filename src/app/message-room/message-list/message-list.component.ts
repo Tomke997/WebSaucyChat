@@ -18,7 +18,8 @@ export class MessageListComponent implements OnInit {
   croppedImage: any = '';
   fileToUpload: File;
 
-  constructor(private messageService: MessageService, private fs: FileService) { }
+  constructor(private messageService: MessageService, private fs: FileService) {
+  }
 
   ngOnInit() {
     this.allMessages$ = this.messageService.getAllMessages();
@@ -42,6 +43,7 @@ export class MessageListComponent implements OnInit {
     this.fileToUpload = event.target.files[0];
     this.fs.sendNewFile(this.fileToUpload, 'stuff for text').subscribe();
   }
+
   imageCropped(event: ImageCroppedEvent) {
     this.croppedImage = event.base64;
     console.log(this.croppedImage);

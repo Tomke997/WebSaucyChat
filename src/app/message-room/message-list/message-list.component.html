@@ -7,6 +7,8 @@
       <div class="user_photo"></div>
       <div class="user_message">
         {{message.text}}
+        <br>
+        <img [src]="message.imageId" *ngIf="!!message.imageId"  style="width: 200px; height: 200px;">
         <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
       </div>
     </div>
@@ -15,6 +17,8 @@
       <div class="user_photo"></div>
       <div class="user_message">
         {{message.text}}
+        <br>
+        <img [src]="message.imageId"  *ngIf="!!message.imageId" style="width: 200px; height: 200px;">
         <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
       </div>
     </div>
