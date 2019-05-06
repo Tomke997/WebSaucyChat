@@ -4,5 +4,7 @@ export interface Message {
   userId: string;
   imageId?: string;
   time: Date;
+  pictureUri?: string,
+  userPicture?: string
 
 }

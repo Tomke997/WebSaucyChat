@@ -14,15 +14,19 @@ import {FileService} from "../../file/shared/file.service";
 export class MessageListComponent implements OnInit {
   messageForm = new FormControl('');
   allMessages$: Observable<Message[]>;
+  allMessagesArray: Message[] = [];
   imageChangedEvent: any = '';
   croppedImage: any = '';
   fileToUpload: File;
 
-  constructor(private messageService: MessageService, private fs: FileService) {
+  constructor(private messageService: MessageService) {
   }
 
   ngOnInit() {
-    this.allMessages$ = this.messageService.getAllMessages();
+    /*this.allMessages$ = this.messageService.getAllMessages();*/
+    this.messageService.getAllMessages(this.allMessagesArray).subscribe( value => {
+      this.allMessagesArray = value;
+      })
 
   }
 
@@ -41,7 +45,7 @@ export class MessageListComponent implements OnInit {
   uploadNewImage(event) {
     this.imageChangedEvent = event;
     this.fileToUpload = event.target.files[0];
-    this.fs.sendNewFile(this.fileToUpload, 'stuff for text').subscribe();
+    this.messageService
   }
 
   imageCropped(event: ImageCroppedEvent) {

@@ -1,14 +1,14 @@
 <div class="chat_box">
   <div class="chat_logs">
 
-    <div *ngFor="let message of allMessages$ | async">
+    <div *ngFor="let message of allMessagesArray">
 
     <div  class="chat self" *ngIf="message.userId === 'UserNo1'">   <!--CURRENT USER-->
       <div class="user_photo"></div>
       <div class="user_message">
         {{message.text}}
         <br>
-        <img [src]="message.imageId" *ngIf="!!message.imageId"  style="width: 200px; height: 200px;">
+        <img [src]="message.pictureUri" *ngIf="!!message.imageId"  style="width: 200px; height: 200px;">
         <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
       </div>
     </div>
@@ -18,7 +18,7 @@
       <div class="user_message">
         {{message.text}}
         <br>
-        <img [src]="message.imageId"  *ngIf="!!message.imageId" style="width: 200px; height: 200px;">
+        <img [src]="message.pictureUri"  *ngIf="!!message.imageId" style="width: 200px; height: 200px;">
         <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
       </div>
     </div>
