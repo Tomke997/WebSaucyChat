@@ -54,7 +54,6 @@ export class MessageService {
         data.id = message.payload.doc.id;
 
         if(!this.checkObjectInArray(listOfMessages, data.id)) {
-          console.log(data.text);
           if (!!data.imageId) {
             this.fileService.getPictureUrl(data.imageId).subscribe(pictureUri => {
               data.pictureUri = pictureUri;

@@ -29,7 +29,7 @@
 
 
     <form class="chat_form" (ngSubmit)="onSendClick()">
-      <textarea style="width:242px;height: auto" [formControl]="messageForm"></textarea>
+      <textarea (keyup)="submitTextOnKeyPress($event)" style="width:242px;height: auto" [formControl]="messageForm"></textarea>
       <!--<input style="width:242px;height: auto" type="text" [formControl]="messageForm">-->
       <input type="submit" value="SEND">
       <input type="file" (change)="uploadNewImage($event)"  accept="image/*"/>

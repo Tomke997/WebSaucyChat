@@ -19,7 +19,7 @@ export class MessageListComponent implements OnInit {
   croppedImage: any = '';
   fileToUpload: File;
 
-  constructor(private messageService: MessageService) {
+  constructor(private messageService: MessageService, private fb: FileService) {
   }
 
   ngOnInit() {
@@ -45,7 +45,6 @@ export class MessageListComponent implements OnInit {
   uploadNewImage(event) {
     this.imageChangedEvent = event;
     this.fileToUpload = event.target.files[0];
-    this.messageService
   }
 
   imageCropped(event: ImageCroppedEvent) {
@@ -53,4 +52,9 @@ export class MessageListComponent implements OnInit {
     console.log(this.croppedImage);
   }
 
+  submitTextOnKeyPress($event: KeyboardEvent) {
+    if ($event.key === "Enter") {
+      this.onSendClick();
+    }
+  }
 }

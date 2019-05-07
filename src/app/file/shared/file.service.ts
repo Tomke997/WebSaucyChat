@@ -32,6 +32,20 @@ export class FileService {
     );
   }
 
+ sendNewFileBase64(base64Image: string, text: string, originalFileName: string) {
+   const uid = this.db.createId();
+   const split = base64Image.split(',');
+   const base64EncodedImageString = split[1];
+   this.storage.ref('message-pictures/' + uid).putString(base64EncodedImageString,'base64',
+     {
+       customMetadata: {
+         originalName: originalFileName,
+         message: text,
+         userId: 'userTestPicture'
+       }
+     }).then()
+ }
+
   getPictureUrl(id: string): Observable<string> {
     return this.storage.ref('message-pictures/' + id)
       .getDownloadURL();
