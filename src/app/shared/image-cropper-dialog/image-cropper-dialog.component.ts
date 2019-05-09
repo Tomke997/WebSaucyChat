@@ -16,18 +16,31 @@ export class ImageCropperDialogComponent implements OnInit {
   ngOnInit() {
     this.initializeImageDialog();
   }
+  /**
+   * open image dialog
+   */
   initializeImageDialog() {
     let element: HTMLElement = document.getElementById('imageButton') as HTMLElement;
     element.click();
   }
+  /**
+   * get selected file
+   */
   uploadNewImage(event) {
     this.imageChangedEvent = event;
     this.fileToUpload = event.target.files[0];
   }
 
+  /**
+   * get base64 from cropped image
+   */
   imageCropped(event: ImageCroppedEvent) {
     this.croppedImage = event.base64;
   }
+
+  /**
+   * close dialog window and send croppedImage
+   */
   SendCroppedImage() {
     const file = {
       originalName: this.fileToUpload.name,
@@ -36,6 +49,9 @@ export class ImageCropperDialogComponent implements OnInit {
     this.dialogRef.close(file);
   }
 
+  /**
+   * close dialog window
+   */
   closeWithoutSaving() {
     this.dialogRef.close();
   }

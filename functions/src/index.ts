@@ -7,7 +7,7 @@ import * as admin from 'firebase-admin'
 admin.initializeApp();
 
 /**
- * trigger return message when message is send
+ * create new message and file
  */
 exports.uploadNewImage =
   functions.storage.object().onFinalize( (object) => {

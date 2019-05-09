@@ -11,7 +11,9 @@ export class FileService {
 
   constructor(private storage: AngularFireStorage,
               private db: AngularFirestore) {}
-
+  /*
+   * send file to the storage
+   */
   public sendNewFile(newFile: File, text: string):Observable<File> {
     const uid = this.db.createId();
     return defer(() =>
@@ -31,7 +33,9 @@ export class FileService {
       })
     );
   }
-
+  /*
+   * send new image to the storage as a base64
+   */
  sendNewFileBase64(base64Image: string, originalFileName: string) {
    const uid = this.db.createId();
    const split = base64Image.split(',');
@@ -45,7 +49,9 @@ export class FileService {
        }
      }).then()
  }
-
+/*
+ * get download URL for picture
+ */
   getPictureUrl(id: string): Observable<string> {
     return this.storage.ref('message-pictures/' + id)
       .getDownloadURL();

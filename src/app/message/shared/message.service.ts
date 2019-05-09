@@ -41,7 +41,7 @@ export class MessageService {
 
   }
   /**
-   * get all messages from data and sort them by date
+   * get all messages from database and sort them by date
    */
   getAllMessages(collection?: Message[]): Observable<Message[]>{
     return this.db.collection('messages').snapshotChanges().pipe(map( value => {
@@ -68,7 +68,7 @@ export class MessageService {
     }));
   }
   /**
-   * check if message is already in array
+   * check if message is in the array
    */
   checkObjectInArray(array: Message[], id:string): boolean {
     let isInArray = false;
@@ -80,11 +80,14 @@ export class MessageService {
     return isInArray;
   }
   /**
-   * send file to the firestore storage
+   * send file to the firebase storage
    */
   sendNewFIleToStorage(newFile: File, message: string): Observable<File> {
    return this.fileService.sendNewFile(newFile,message);
   }
+  /**
+   * send image to the firebase storage as a base64
+   */
   sendNewFIleToStorageBase64(base64: string, originalName: string) {
     return this.fileService.sendNewFileBase64(base64,originalName);
   }

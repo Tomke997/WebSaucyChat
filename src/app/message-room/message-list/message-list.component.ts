@@ -28,7 +28,7 @@ export class MessageListComponent implements OnInit {
 
   }
   /**
-   * send message and reset the text field
+   * send message and clear the text field
    */
   onSendClick() {
     if (this.messageForm.value !== "") {
@@ -39,12 +39,18 @@ export class MessageListComponent implements OnInit {
     }
   }
 
+  /**
+   * send message on enter click
+   */
   submitTextOnKeyPress($event: KeyboardEvent) {
     if ($event.key === "Enter") {
       this.onSendClick();
     }
   }
 
+  /**
+   * open dialog window with imageCropper / send picture to the storage
+   */
   openDialog(): void {
     const dialogRef = this.dialog.open(ImageCropperDialogComponent, {
       width: '600px',
