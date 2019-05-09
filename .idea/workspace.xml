@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52d776fa-2018-4e26-a69f-c8fbcb78edda" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/functions/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/file/shared/file.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/file/shared/file.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/message/shared/message.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message/shared/message.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="52d776fa-2018-4e26-a69f-c8fbcb78edda" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -193,12 +187,12 @@
       <workItem from="1556090101260" duration="9123000" />
       <workItem from="1556703914602" duration="44436000" />
       <workItem from="1557131828196" duration="14702000" />
-      <workItem from="1557311118478" duration="2598000" />
+      <workItem from="1557311118478" duration="3195000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84649000" />
+    <option name="totallyTimeSpent" value="85246000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

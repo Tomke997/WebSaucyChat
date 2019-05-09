@@ -14,14 +14,13 @@ export class FileService {
   /*
    * send file to the storage
    */
-  public sendNewFile(newFile: File, text: string):Observable<File> {
+  public sendNewFile(newFile: File):Observable<File> {
     const uid = this.db.createId();
     return defer(() =>
       this.storage.ref('message-pictures/' + uid)
         .put(newFile, {
           customMetadata: {
             originalName: newFile.name,
-            message: text,
             userId: 'userTestPicture'
           }
         })
@@ -44,7 +43,6 @@ export class FileService {
      {
        customMetadata: {
          originalName: originalFileName,
-         message: '',
          userId: 'userTestPicture'
        }
      }).then()

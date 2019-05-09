@@ -31,7 +31,7 @@ exports.uploadNewImage =
 
          // message metadata
         const messageMeta = {
-          text: object.metadata.message,
+          text: '',
           time: new Date(),
           userId: object.metadata.userId,
           imageId: imageId
