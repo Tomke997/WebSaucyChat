@@ -27,21 +27,12 @@
 
   </div>
 
-
     <form class="chat_form" (ngSubmit)="onSendClick()">
       <textarea (keyup)="submitTextOnKeyPress($event)" style="width:242px;height: auto" [formControl]="messageForm"></textarea>
       <!--<input style="width:242px;height: auto" type="text" [formControl]="messageForm">-->
       <input type="submit" value="SEND">
-      <input type="file" (change)="uploadNewImage($event)"  accept="image/*"/>
+      <!--<input type="file" (change)="uploadNewImage($event)"  accept="image/*"/>-->
+      <button (click)="openDialog()">Image</button>
     </form>
 
 </div>
-
-<image-cropper
-  [imageChangedEvent]="imageChangedEvent"
-  [maintainAspectRatio]="true"
-  [aspectRatio]="4 / 3"
-  [resizeToWidth]="128"
-  format="png"
-  (imageCropped)="imageCropped($event)"
-></image-cropper>

@@ -7,6 +7,9 @@ import {AngularFireStorageModule} from "@angular/fire/storage";
 import {AngularFireModule} from "@angular/fire";
 import {environment} from "../environments/environment.prod";
 import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NgxsModule} from "@ngxs/store";
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import {HttpClientModule} from "@angular/common/http";
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

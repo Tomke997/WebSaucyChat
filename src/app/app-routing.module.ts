@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: './message-room/message-room.module#MessageRoomModule'
   },
   {
+    path: 'stuff',
+    loadChildren: './shared/shared.module#SharedModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'

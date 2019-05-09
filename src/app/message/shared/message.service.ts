@@ -85,5 +85,8 @@ export class MessageService {
   sendNewFIleToStorage(newFile: File, message: string): Observable<File> {
    return this.fileService.sendNewFile(newFile,message);
   }
+  sendNewFIleToStorageBase64(base64: string, originalName: string) {
+    return this.fileService.sendNewFileBase64(base64,originalName);
+  }
   }
 

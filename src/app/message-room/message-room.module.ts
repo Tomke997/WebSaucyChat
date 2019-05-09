@@ -4,8 +4,8 @@ import { MessageRoomRoutingModule } from './message-room-routing.module';
 import {MessageListComponent} from "./message-list/message-list.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MessageService} from "../message/shared/message.service";
-import {ImageCropperModule} from "ngx-image-cropper";
 import {FileService} from "../file/shared/file.service";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -13,14 +13,14 @@ import {FileService} from "../file/shared/file.service";
   ],
   imports: [
     CommonModule,
+    SharedModule,
     MessageRoomRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    ImageCropperModule
   ],
   providers: [
     MessageService,
-    FileService
+    FileService,
   ]
 })
 export class MessageRoomModule { }

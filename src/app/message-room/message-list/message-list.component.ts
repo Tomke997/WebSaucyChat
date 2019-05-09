@@ -3,8 +3,8 @@ import {FormControl} from "@angular/forms";
 import {MessageService} from "../../message/shared/message.service";
 import {Observable} from "rxjs";
 import {Message} from "../../message/shared/message";
-import { ImageCroppedEvent } from 'ngx-image-cropper';
-import {FileService} from "../../file/shared/file.service";
+import {MatDialog} from '@angular/material';
+import {ImageCropperDialogComponent} from "../../shared/image-cropper-dialog/image-cropper-dialog.component";
 
 @Component({
   selector: 'app-message-list',
@@ -13,13 +13,11 @@ import {FileService} from "../../file/shared/file.service";
 })
 export class MessageListComponent implements OnInit {
   messageForm = new FormControl('');
-  allMessages$: Observable<Message[]>;
   allMessagesArray: Message[] = [];
-  imageChangedEvent: any = '';
-  croppedImage: any = '';
-  fileToUpload: File;
+  allMessages$: Observable<Message[]>;
+  croppedImage: string = '';
 
-  constructor(private messageService: MessageService, private fb: FileService) {
+  constructor(private messageService: MessageService, private dialog: MatDialog,) {
   }
 
   ngOnInit() {
@@ -29,7 +27,6 @@ export class MessageListComponent implements OnInit {
       })
 
   }
-
   /**
    * send message and reset the text field
    */
@@ -42,19 +39,25 @@ export class MessageListComponent implements OnInit {
     }
   }
 
-  uploadNewImage(event) {
-    this.imageChangedEvent = event;
-    this.fileToUpload = event.target.files[0];
-  }
-
-  imageCropped(event: ImageCroppedEvent) {
-    this.croppedImage = event.base64;
-    console.log(this.croppedImage);
-  }
-
   submitTextOnKeyPress($event: KeyboardEvent) {
     if ($event.key === "Enter") {
       this.onSendClick();
     }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ImageCropperDialogComponent, {
+      width: '600px',
+      data: {
+        file: this.croppedImage
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      if(!!result) {
+        this.messageService.sendNewFIleToStorageBase64(result.base64,result.originalName);
+      }
+    });
   }
 }
