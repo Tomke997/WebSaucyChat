@@ -16,7 +16,7 @@ import {SharedModule} from "../shared/shared.module";
     SharedModule,
     MessageRoomRoutingModule,
     ReactiveFormsModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [
     MessageService,

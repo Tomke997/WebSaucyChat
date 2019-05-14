@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Message} from "./message";
+import {Message} from "../../shared/model/message";
 import {defer, Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import {AngularFirestore} from "@angular/fire/firestore";
@@ -21,6 +21,7 @@ export class MessageService {
       text: messageText,
       time: new Date(),
       userId: "UserNo1",
+      imageId: null
     };
     console.log("message metadata was created");
     return newMessage;
@@ -81,10 +82,10 @@ export class MessageService {
   }
   /**
    * send file to the firebase storage
-   */
+
   sendNewFIleToStorage(newFile: File, message: string): Observable<File> {
    return this.fileService.sendNewFile(newFile,message);
-  }
+  }*/
   /**
    * send image to the firebase storage as a base64
    */

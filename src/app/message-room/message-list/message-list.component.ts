@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {MessageService} from "../../message/shared/message.service";
 import {Observable} from "rxjs";
-import {Message} from "../../message/shared/message";
+import {Message} from "../../shared/model/message";
 import {MatDialog} from '@angular/material';
 import {ImageCropperDialogComponent} from "../../shared/image-cropper-dialog/image-cropper-dialog.component";
 
