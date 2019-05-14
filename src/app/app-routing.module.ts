@@ -6,10 +6,10 @@ const routes: Routes = [
     path: 'message-room',
     loadChildren: './message-room/message-room.module#MessageRoomModule'
   },
-  /*{
+  {
     path: 'login',
     loadChildren: './user/user.module#UserModule'
-  },*/
+  },
   {
     path: '',
     redirectTo: '',
