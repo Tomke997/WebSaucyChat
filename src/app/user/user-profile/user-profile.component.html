@@ -6,9 +6,17 @@
 <!-- User NOT logged in -->
 <ng-template #guest>
   <h3>Hi, GUEST</h3>
-  <p>Login or sign up to get started...</p>
+  <p>Login to get started...</p>
+<!--
+  <div>
+    <input placeholder="Email" id="email">
+    <input placeholder="Password">
 
-  <button (click)="auth.googleLogin()">
+    <button (click)="auth.onclickLogin(email, password)">Log in</button>
+    <button>Sign Up</button>
+  </div>
+-->
+  <button (click)="onClickConnect()">
     <i class="fa fa-google"></i> Connect Google
   </button>
 
@@ -19,9 +27,7 @@
 <ng-template #authenticated>
   <div *ngIf="auth.user | async as user">
     <h3>Hi there, {{ user.displayName }}</h3>
-    <img  [src]="user.photoURL">
-    <p>UID: {{ user.uid }}</p>
-    <p>Favorite Color: {{ user?.favoriteColor }} </p>
+    <img [src]="user.imageId">
     <button (click)="auth.signOut()">Logout</button>
   </div>
 </ng-template>

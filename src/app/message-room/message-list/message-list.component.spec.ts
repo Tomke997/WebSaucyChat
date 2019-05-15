@@ -9,6 +9,8 @@ import {environment} from "../../../environments/environment";
 import {DOMHelper} from "../../../testing/dom-helper";
 import {RouterTestingModule} from "@angular/router/testing";
 import {getLocaleTimeFormat} from "@angular/common";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatDialog, MatDialogModule} from "@angular/material";
 
 describe('MessageListComponent', () => {
   let component: MessageListComponent;
@@ -21,7 +23,7 @@ describe('MessageListComponent', () => {
     messageServiceMock.getAllMessages.and.returnValue(of([]));
     TestBed.configureTestingModule({
       declarations: [MessageListComponent],
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, ReactiveFormsModule, FormsModule, MatDialogModule],
       providers: [{provide: MessageService, useValue: messageServiceMock}]
     })
       .compileComponents();
@@ -38,20 +40,16 @@ describe('MessageListComponent', () => {
     beforeEach(() => {
       fixture.detectChanges();
     });
-    /*
         it('should create', () => {
           expect(component).toBeTruthy();
         });
-    */
   });
-  /*
- //not working yet, formcontrol issue
+
     it('should call getAllMessages once', () => {
       fixture.detectChanges();
       expect(messageServiceMock.getAllMessages).toHaveBeenCalledTimes(1);
     });
 
-    */
 });
 
 class Helper {
@@ -60,7 +58,7 @@ class Helper {
   getAllMessages(amount: number): Observable<Message[]> {
     for (let i = 0; i < amount; i++) {
       this.messages.push(
-        //  {id: 'abc' + i, text: 'haa', userId: 'asd', time: HH:mm:ss }
+          {id: 'abc' + i, text: 'haa', userId: 'asd', time: new Date() }
         // insert message stuff
       );
     }
@@ -77,6 +75,4 @@ export interface Message {
   time: Date;
   pictureUri?: string,
   userPicture?: string
-
-}
  */

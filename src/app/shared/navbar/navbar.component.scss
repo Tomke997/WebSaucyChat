@@ -1,0 +1,35 @@
+#logo {
+  width: 86%;
+  margin-top: 10px;
+}
+
+.big-navigation-container {
+  display: block;
+  width: 80%;
+  text-align: right;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.screen-navigation-controls {
+  font-size: 16px;
+  font-weight: 600;
+  color: mediumvioletred;
+  text-decoration: none;
+  margin: 0 20px;
+}
+
+.mat-toolbar {
+  background: #e8e8e8;
+}
+
+.mat-drawer {
+  background-color: #e8e8e8;
+}
+
+@media only screen and (max-width: 600px) {
+  #logo {
+    width: 86%;
+    margin-top: 10px;
+  }
+}
