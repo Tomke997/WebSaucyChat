@@ -6,7 +6,6 @@ import {auth} from 'firebase/app';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 import {User} from "../../shared/model/user";
-import {logger} from "codelyzer/util/logger";
 import {LoggerService} from "./logger.service";
 
 @Injectable({

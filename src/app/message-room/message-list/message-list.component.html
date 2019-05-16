@@ -5,7 +5,9 @@
     <div *ngFor="let message of allMessagesArray">
 
     <div  class="chat self" *ngIf="message.userId === 'UserNo1'">   <!--CURRENT USER-->
-      <div class="user_photo"></div>
+      <div class="user_photo">
+      </div>
+
       <div class="user_message">
         {{message.text}}
         <br>
@@ -15,7 +17,9 @@
     </div>
 
     <div  class="chat friend" *ngIf="message.userId !== 'UserNo1'"> <!--SOMEONE ELSE-->
-      <div class="user_photo"></div>
+      <!--<div class="user_photo">
+      </div> -->
+      <img class="user_photo" [src]="message.pictureUri" *ngIf="!!message.imageId">
       <div class="user_message">
         {{message.text}}
         <br>

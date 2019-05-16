@@ -20,12 +20,12 @@ import {NavbarComponent} from "./navbar/navbar.component";
     ImageCropperModule,
     MatToolbarModule
   ],
-  /*exports: [
+  exports: [
     CommonModule,
     SharedRoutingModule,
     MatDialogModule,
     ImageCropperModule,
-    MatToolbarModule],*/
+    MatToolbarModule],/**/
 
   entryComponents: [
     ImageCropperDialogComponent

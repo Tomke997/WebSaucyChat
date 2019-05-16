@@ -25,7 +25,6 @@ export class MessageListComponent implements OnInit {
     this.messageService.getAllMessages(this.allMessagesArray).subscribe( value => {
       this.allMessagesArray = value;
       })
-
   }
   /**
    * send message and clear the text field

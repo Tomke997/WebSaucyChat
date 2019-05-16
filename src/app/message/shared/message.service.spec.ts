@@ -16,11 +16,8 @@ describe('MessageService', () => {
   beforeEach(() => {
     angularFirestoreMock = jasmine.createSpyObj('AngularFirestore', ['collection']);
     fsCollectionMock = jasmine.createSpyObj('collection', ['snapshotChanges', 'valueChanges']);
-
-
     angularFirestoreMock.collection.and.returnValue(fsCollectionMock);
-
-    fsCollectionMock.snapshotChanges.and.returnValue(of([])); //TypeError: Cannot read property 'and' of undefined
+    fsCollectionMock.snapshotChanges.and.returnValue(of([]));
     fileServiceMock = jasmine.createSpyObj('FileService', ['getPictureUrl', 'upload']);
 
     TestBed.configureTestingModule({
@@ -37,18 +34,24 @@ describe('MessageService', () => {
     service = TestBed.get(MessageService);
   });
 
-   it('should be created', () => {
-     expect(service).toBeTruthy();
-   });
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
 
-   describe('getMessageCalls x times', () => {
-     beforeEach(() => {
-     service.getAllMessages();
-   });
-          //TypeError: Cannot read property 'pipe' of undefined
-         it('should call collection 1 time on AngularFirestore service', function () {
-           expect(angularFirestoreMock.collection).toHaveBeenCalledTimes(1);
-         });/**/
+  describe('getMessageCalls x times', () => {
+    beforeEach(() => {
+      service.getAllMessages();
+    });
+    it('should call collection 1 time on AngularFirestore service', function () {
+      expect(angularFirestoreMock.collection).toHaveBeenCalledTimes(1);
+    });
 
-   });
+    it('should call collection with "messages" as param', () => {
+      expect(angularFirestoreMock.collection).toHaveBeenCalledWith('messages');
+    });
+
+    it('should call snapshotChanges 1 time on AngularFirestore service', () => {
+      expect(fsCollectionMock.snapshotChanges).toHaveBeenCalledTimes(1);
+    });
+  });
 });

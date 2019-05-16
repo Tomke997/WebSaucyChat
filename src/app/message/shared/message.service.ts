@@ -11,7 +11,9 @@ import {FileService} from "../../file/shared/file.service";
 })
 export class MessageService {
 
-  constructor(private db: AngularFirestore, private http: HttpClient, private fileService: FileService) {
+  constructor(private db: AngularFirestore,
+              private http: HttpClient,
+              private fileService: FileService) {
   }
   /**
    * create message metadata

@@ -21,7 +21,7 @@ export class FileService {
         .put(newFile, {
           customMetadata: {
             originalName: newFile.name,
-            userId: 'userTestPicture'
+            userId: uid
           }
         })
         .then()
@@ -43,7 +43,7 @@ export class FileService {
      {
        customMetadata: {
          originalName: originalFileName,
-         userId: 'userTestPicture'
+         userId: uid
        }
      }).then()
  }

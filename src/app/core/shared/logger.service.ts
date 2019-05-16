@@ -3,8 +3,6 @@ import {AngularFirestore, AngularFirestoreDocument} from "@angular/fire/firestor
 
 import {AngularFireAuth} from "@angular/fire/auth";
 import {Log} from "../../shared/model/log";
-import DateTimeFormat = Intl.DateTimeFormat;
-import {formatDate} from "@angular/common";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +12,7 @@ export class LoggerService {
               private afs: AngularFirestore,) {}
 
   createLogEntry(userData) {
+    //gets the firestore path to save to
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`logger/${this.afs.createId()}`);
 
     const data: Log = {
