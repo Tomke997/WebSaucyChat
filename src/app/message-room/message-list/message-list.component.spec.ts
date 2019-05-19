@@ -18,6 +18,7 @@ describe('MessageListComponent', () => {
   beforeEach(async(() => {
     messageServiceMock = jasmine.createSpyObj('MessageService', ['getAllMessages']);
     messageServiceMock.getAllMessages.and.returnValue(of([]));
+
     TestBed.configureTestingModule({
       declarations: [MessageListComponent],
       imports: [RouterTestingModule, ReactiveFormsModule, FormsModule, MatDialogModule],
@@ -38,6 +39,7 @@ describe('MessageListComponent', () => {
     beforeEach(() => {
       fixture.detectChanges();
     });
+
     it('should create', () => {
       expect(component).toBeTruthy();
     });
@@ -60,7 +62,6 @@ describe('MessageListComponent', () => {
       helper = new Helper();
       fixture.detectChanges();
     });
-
 
   });
 //test to do:

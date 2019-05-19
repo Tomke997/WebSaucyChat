@@ -11,7 +11,6 @@ import {LoggerService} from "../../core/shared/logger.service";
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-  loginForm: FormGroup;
   constructor(public auth: AuthService) { }
 
   ngOnInit() {

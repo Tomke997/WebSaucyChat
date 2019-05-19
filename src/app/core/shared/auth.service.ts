@@ -7,6 +7,8 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 import {User} from "../../shared/model/user";
 import {LoggerService} from "./logger.service";
+import * as Http from "http";
+import {Log} from "../../shared/model/log";
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +20,8 @@ export class AuthService {
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
     private router: Router,
-    private logger: LoggerService
+    private logger: LoggerService,
+    private http: Http
   ) {
     //// Get auth data, then get firestore user document || null
     this.user = this.afAuth.authState.pipe(
@@ -50,11 +53,15 @@ export class AuthService {
 
     const data: User = {
       email: user.email,
-      displayName: user.displayName,
-      //imageId: user.imageId
+      displayName: user.displayName
     };
     this.logger.createLogEntry(data);
     return userRef.set(data, {merge: true})
+  }
+//not sure if needed
+  isLoggedIn()
+  {
+    return this.afAuth.auth.currentUser != null;
   }
 
   signOut() {
@@ -62,4 +69,15 @@ export class AuthService {
       this.router.navigate(['/login']);
     });
   }
+
+
+  /*
+// map doesn't work
+  getIP() //: Observable<Log[]>
+  {
+    return this.http.get('http://ipinfo.io') // ...using post request
+    .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
+    .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
+}*/
+
 }

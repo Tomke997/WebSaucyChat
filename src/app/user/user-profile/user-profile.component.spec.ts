@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserProfileComponent } from './user-profile.component';
+import {AngularFireAuth, AngularFireAuthModule} from "@angular/fire/auth";
+import {of} from "rxjs";
+import {AuthService} from "../../core/shared/auth.service";
 
 describe('UserProfileComponent', () => {
   let component: UserProfileComponent;
@@ -8,7 +11,11 @@ describe('UserProfileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserProfileComponent ]
+      declarations: [ UserProfileComponent ],
+      imports: [],
+      providers: [
+        {provide: AuthService, useClass: AuthServiceStub}
+      ]
     })
     .compileComponents();
   }));
@@ -18,8 +25,12 @@ describe('UserProfileComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-/*
+
   it('should create', () => {
     expect(component).toBeTruthy();
-  }); */
+  });
 });
+
+class AuthServiceStub {
+  onClickConnect(){}
+}

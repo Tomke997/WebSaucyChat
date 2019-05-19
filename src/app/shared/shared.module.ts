@@ -25,7 +25,7 @@ import {NavbarComponent} from "./navbar/navbar.component";
     SharedRoutingModule,
     MatDialogModule,
     ImageCropperModule,
-    MatToolbarModule],/**/
+    MatToolbarModule],
 
   entryComponents: [
     ImageCropperDialogComponent

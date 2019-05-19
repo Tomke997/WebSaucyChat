@@ -1,15 +1,14 @@
 import {Injectable} from '@angular/core';
 import {AngularFirestore, AngularFirestoreDocument} from "@angular/fire/firestore";
-
-import {AngularFireAuth} from "@angular/fire/auth";
 import {Log} from "../../shared/model/log";
+import {AuthService} from "./auth.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoggerService {
-  constructor(private afAuth: AngularFireAuth,
-              private afs: AngularFirestore,) {}
+  constructor(private afs: AngularFirestore,
+              private authService: AuthService) {}
 
   createLogEntry(userData) {
     //gets the firestore path to save to
@@ -22,9 +21,12 @@ export class LoggerService {
     };
     return userRef.set(data, {merge: true})
   }
-
-  getIpAddress()
-  {
-
-  }
+/*
+  getIP() {
+    this.authService.getIP()
+      .subscribe(
+        IPDetails => this.IppDetails,
+        error =>  this.errorMessage = <any>error
+      );
+  }*/
 }
