@@ -3,34 +3,45 @@ import {AuthService} from './auth.service';
 import {AngularFirestore, AngularFirestoreModule} from "@angular/fire/firestore";
 import {AngularFireAuth, AngularFireAuthModule,} from "@angular/fire/auth";
 import {LoggerService} from "./logger.service";
-import {Observable, of} from "rxjs";
 import {RouterTestingModule} from "@angular/router/testing";
-import {AngularFireModule} from "@angular/fire";
-import {environment} from "../../../environments/environment.prod";
+import {User} from "../../shared/model/user";
+import {of} from "rxjs";
 
 describe('AuthService', () => {
-  let angularFireAuthMock: any;
+  //let angularFireAuthMock: any;
   let angularFirestoreMock: any;
   let fsCollectionMock: any;
   let loggerServiceMock: any;
   let service: AuthService;
+  let authMock: any;
+  //let authStateMock: any;
+
 
   beforeEach(() => {
     loggerServiceMock = jasmine.createSpyObj(['createLogEntry']);
     angularFirestoreMock = jasmine.createSpyObj('AngularFirestore', ['collection']);
+    authMock = jasmine.createSpyObj('AuthMock', ['signInWithEmailAndPassword']);
     fsCollectionMock = jasmine.createSpyObj('collection', ['snapshotChanges', 'valueChanges']);
 
-    angularFireAuthMock = jasmine.createSpyObj('AngularFireAuth', ['authState']);
-    //angularFireAuthMock.authState.and.returnValue(of([]));
-    angularFireAuthMock.auth = {currentUser: true};
-    angularFireAuthMock.auth = {
-      currentUser: true, signInWithEmailAndPassword: function () {
-      }
-    };
-    angularFireAuthMock.auth.signInWithEmailAndPassword.and.returnValue(of('').toPromise());
-
-    angularFirestoreMock.collection.and.returnValue(fsCollectionMock);
     fsCollectionMock.snapshotChanges.and.returnValue(of([]));
+    angularFirestoreMock.collection.and.returnValue(fsCollectionMock);
+    // An anonymous user
+    const authState: User = {
+      displayName: 'ost',
+      email: 'ost@ost.dk'
+    };
+
+    const mockAngularFireAuth: any = {
+      auth: jasmine.createSpyObj('auth', {
+        'signInAnonymously': Promise.reject({
+          code: 'auth/operation-not-allowed'
+        }),
+        'signInWithEmailAndPassword': of('').toPromise()
+        // 'signInWithPopup': Promise.reject(),
+        // 'signOut': Promise.reject()
+      }),
+      authState: of(authState)
+    };
 
     TestBed.configureTestingModule({
       imports: [
@@ -40,20 +51,17 @@ describe('AuthService', () => {
       ],
       providers: [
         {provide: AngularFirestore, useValue: angularFirestoreMock},
-        {provide: AngularFireAuth, useValue: angularFireAuthMock},
+        {provide: AngularFireAuth, useValue: mockAngularFireAuth},
         {provide: LoggerService, useValue: loggerServiceMock},
       ],
     });
-
     service = TestBed.get(AuthService);
   });
-  /*
+
     it('should be created', () => {
       expect(service).toBeTruthy();
     });
-    */
 });
-
 
 /*
 private afAuth: AngularFireAuth,
