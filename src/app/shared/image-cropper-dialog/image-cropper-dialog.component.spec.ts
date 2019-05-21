@@ -25,7 +25,7 @@ describe('ImageCropperDialogComponent', () => {
 
     it('should create', () => {
       expect(component).toBeTruthy();
-    }); /**/
+    });
 });
 
 class MatDialogRefStub<ImageCropperDialogComponent> {}

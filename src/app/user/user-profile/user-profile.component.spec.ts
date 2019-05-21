@@ -29,7 +29,15 @@ describe('UserProfileComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('service should exist', () => {
+    const service: AuthServiceStub = new AuthServiceStub();
+    expect(service).toBeTruthy();
+  });
+
 });
+
+//on click connect to be called
 
 class AuthServiceStub {
   onClickConnect(){}

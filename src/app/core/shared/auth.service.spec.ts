@@ -36,9 +36,11 @@ describe('AuthService', () => {
         'signInAnonymously': Promise.reject({
           code: 'auth/operation-not-allowed'
         }),
-        'signInWithEmailAndPassword': of('').toPromise()
-        // 'signInWithPopup': Promise.reject(),
-        // 'signOut': Promise.reject()
+        'signInWithEmailAndPassword': of('').toPromise(),
+        'signInWithPopup': Promise.reject(),
+        'signOut': Promise.reject(),
+        'currentUser': Promise.reject()
+
       }),
       authState: of(authState)
     };
@@ -62,6 +64,12 @@ describe('AuthService', () => {
       expect(service).toBeTruthy();
     });
 });
+
+//it should sign in
+
+//it should sign out
+
+//it should update user data
 
 /*
 private afAuth: AngularFireAuth,

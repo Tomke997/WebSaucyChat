@@ -15,10 +15,7 @@ describe('FileService', () => {
   let httpMock: HttpTestingController;
   let service: FileService;
   let refMock;
-  /*
-  private storage: AngularFireStorage,
-              private db: AngularFirestore)
-   */
+ 
   beforeEach(() => {
     // angularFireStorage mock
     angularFireStorageMock = jasmine.createSpyObj('AngularFireStorage', ['ref']);

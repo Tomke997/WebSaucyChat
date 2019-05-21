@@ -45,7 +45,7 @@ describe('MessageListComponent', () => {
     });
 
     //WHY 1 BUTTON?!??!?!
-    it('Should be 1 buttons on the page', () => {
+    it('Should be 1 button on the page', () => {
       expect(dh.count('button')).toBe(1);
     });
 
@@ -56,12 +56,13 @@ describe('MessageListComponent', () => {
     expect(messageServiceMock.getAllMessages).toHaveBeenCalledTimes(1);
   });
 
-  describe('List Products', () => {
+  describe('List Messages', () => {
     let helper: Helper;
     beforeEach(() => {
       helper = new Helper();
       fixture.detectChanges();
     });
+
 
   });
 //test to do:

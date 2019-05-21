@@ -15,6 +15,7 @@ export class MessageService {
               private http: HttpClient,
               private fileService: FileService) {
   }
+
   /**
    * create message metadata
    */
@@ -28,6 +29,7 @@ export class MessageService {
     console.log("message metadata was created");
     return newMessage;
   }
+
   /**
    * send new message without picture
    */
@@ -70,6 +72,7 @@ export class MessageService {
       return listOfMessages.sort((a, b) => a.time.getTime() - b.time.getTime());
     }));
   }
+
   /**
    * check if message is in the array
    */
@@ -82,12 +85,7 @@ export class MessageService {
     });
     return isInArray;
   }
-  /**
-   * send file to the firebase storage
 
-  sendNewFIleToStorage(newFile: File, message: string): Observable<File> {
-   return this.fileService.sendNewFile(newFile,message);
-  }*/
   /**
    * send image to the firebase storage as a base64
    */

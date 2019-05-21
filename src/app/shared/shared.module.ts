@@ -5,27 +5,23 @@ import {SharedRoutingModule} from './shared-routing.module';
 import {ImageCropperDialogComponent} from "./image-cropper-dialog/image-cropper-dialog.component";
 import {MatDialogModule, MatToolbarModule} from "@angular/material";
 import {ImageCropperModule} from "ngx-image-cropper";
-import {NavbarComponent} from "./navbar/navbar.component";
 
 
 @NgModule({
   declarations: [
-    ImageCropperDialogComponent,
-    NavbarComponent
+    ImageCropperDialogComponent
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
     MatDialogModule,
-    ImageCropperModule,
-    MatToolbarModule
+    ImageCropperModule
   ],
   exports: [
     CommonModule,
     SharedRoutingModule,
     MatDialogModule,
-    ImageCropperModule,
-    MatToolbarModule],
+    ImageCropperModule],
 
   entryComponents: [
     ImageCropperDialogComponent
