@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {catchError, map, switchMap} from "rxjs/operators";
+import {switchMap} from "rxjs/operators";
 import {Observable, of} from "rxjs";
 import {Router} from "@angular/router";
 import {auth} from 'firebase/app';
@@ -43,9 +43,9 @@ export class AuthService {
         this.updateUserData(credential.user)
       })
   }
-
+  // Sets user data to firestore on login
   private updateUserData(user) {
-    // Sets user data to firestore on login
+   //gets path to firestore
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
 
     const data: User = {
@@ -55,16 +55,20 @@ export class AuthService {
     this.logger.createLogEntry(data);
     return userRef.set(data, {merge: true})
   }
-
+/*
 //not sure if needed
   isLoggedIn()
   {
     return this.afAuth.auth.currentUser != null;
   }
-
+*/
   signOut() {
     this.afAuth.auth.signOut().then(() => {
       this.router.navigate(['/login']);
     });
+  }
+
+  removeUser(){
+    this.afAuth.auth.currentUser.delete();
   }
 }

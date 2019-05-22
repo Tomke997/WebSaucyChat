@@ -24,4 +24,8 @@ export class UserProfileComponent implements OnInit {
   {
     this.auth.signOut();
   }
+
+  onClickRemoveUser(){
+    this.auth.removeUser();
+  }
 }

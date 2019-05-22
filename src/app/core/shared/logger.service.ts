@@ -23,13 +23,14 @@ export class LoggerService {
         timeStamp: Date().toString(),
         ip: log.ip
       };
+      //saves the log to the firestore path
       return userRef.set(data, {merge: true})
     })
   }
 
   getIP()
   {
-    return this.http.get<Log>('https://jsonip.com')// ...using post request
+    return this.http.get<Log>('https://jsonip.com')// ...using http request, get json ip
       .pipe(
         tap(log => {}),
         catchError((error:any) => Observable.throw(error.json().error || 'Server error'))//...errors if any

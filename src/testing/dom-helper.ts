@@ -6,12 +6,25 @@ export class DOMHelper<T> {
   constructor(fixture: ComponentFixture<T>) {
     this.fixture = fixture;
   }
+
+  singleText(tagName: string): string {
+    const h2Ele = this.fixture.debugElement.query(By.css(tagName));
+    if (h2Ele) {
+      return h2Ele.nativeElement.textContent;
+    }
+  }
+
   count(tagName: string): number {
     const elements = this.fixture.debugElement
       .queryAll(By.css(tagName));
     return elements.length;
   }
 
+  countText(tagName: string, text: string): number {
+    const elements = this.fixture.debugElement
+      .queryAll(By.css(tagName));
+    return elements.filter(element => element.nativeElement.textContent === text).length;
+  }
 
   clickButton(buttonText: string) {
     this.findAll('button').forEach(button => {

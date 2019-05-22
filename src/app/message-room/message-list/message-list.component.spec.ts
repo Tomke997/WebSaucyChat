@@ -70,6 +70,11 @@ describe('MessageListComponent', () => {
       expect(component.openDialog).toHaveBeenCalledTimes(1);
     });
 
+   /* it('List should contain last text', () => {
+      component.allMessages$ = helper.getAllMessages(1);
+      expect(dh.countText('text', 'Number')).toBe(1);
+    });*/
+
   });
 
   describe('Call NgOnInit on Demand', () => {
@@ -79,7 +84,7 @@ describe('MessageListComponent', () => {
     });
 
     it('Should call getAllMessages on the MessageService one time on ngOnInit', () => {
-      fixture.detectChanges();
+     // fixture.detectChanges();
       expect(messageServiceMock.getAllMessages).toHaveBeenCalledTimes(1);
     });
 
@@ -97,7 +102,7 @@ class Helper {
   getAllMessages(amount: number): Observable<Message[]> {
     for (let i = 0; i < amount; i++) {
       this.messages.push(
-        {id: 'abc' + i, text: 'haa' + i, userId: 'asd' + i, time: new Date()}
+        {id: 'abc' + i, text: 'Number' + i, userId: 'asd' + i, time: new Date()}
       );
     }
     return of(this.messages);

@@ -20,6 +20,8 @@
     <h3>Hi there, {{ user.displayName }}</h3>
     <h4>{{user.email}}</h4>
     <img [src]="user.imageId">
+    <a routerLink="/message-room" >Go to chat</a>
     <button (click)="onClickLogOut()">Logout</button>
+    <button (click)="onClickRemoveUser()">Remove user</button>
   </div>
 </ng-template>

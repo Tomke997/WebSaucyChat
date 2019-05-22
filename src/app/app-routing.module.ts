@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {AuthGuard} from "./core/shared/auth.guard";
 
 const routes: Routes = [
   {
     path: 'message-room',
-    loadChildren: './message-room/message-room.module#MessageRoomModule'
+    loadChildren: './message-room/message-room.module#MessageRoomModule',
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',

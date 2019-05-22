@@ -8,13 +8,11 @@ import {User} from "../../shared/model/user";
 import {of} from "rxjs";
 
 describe('AuthService', () => {
-  //let angularFireAuthMock: any;
   let angularFirestoreMock: any;
   let fsCollectionMock: any;
   let loggerServiceMock: any;
   let service: AuthService;
   let authMock: any;
-  //let authStateMock: any;
 
 
   beforeEach(() => {
@@ -25,8 +23,8 @@ describe('AuthService', () => {
 
     fsCollectionMock.snapshotChanges.and.returnValue(of([]));
     angularFirestoreMock.collection.and.returnValue(fsCollectionMock);
-    // An anonymous user
 
+    // An anonymous user
     const authState: User = {
       displayName: 'ost',
       email: 'ost@ost.dk'
@@ -65,12 +63,17 @@ describe('AuthService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should sign in', () => {
+  it('?should sign in', () => {
 
     expect(service).toBeTruthy();
   });
 
-  it('should sign out', () => {
+  it('?should sign out', () => {
+
+    expect(service).toBeTruthy();
+  });
+
+  it('?should remove user', () => {
 
     expect(service).toBeTruthy();
   });
