@@ -1,3 +1,5 @@
+import {describe, it} from "@angular/core/testing/src/testing_internal";
+
 describe("Should visit the login page", () => {
   it("should visit login page", () => {
     cy.visit("http://localhost:4200/login");
@@ -9,19 +11,17 @@ describe("Login page should contain element when logged in/not", () => {
     cy.visit("http://localhost:4200/login");
     cy.contains('Connect Google');
   });
-/*
+
   it("should visit login page", () => {
     cy.visit("http://localhost:4200/login");
     //log in
     cy.contains('Logout');
-  });*/
+  });/**/
 });
-
 
 describe("Routing ", () => {
   it("should not go to message-room when not logged in", () => {
     cy.visit("http://localhost:4200/message-room");
-    //
     cy.contains('Connect Google');
   });
 /*
@@ -32,7 +32,6 @@ describe("Routing ", () => {
     cy.contains('Image');
   });*/
 });
-
 /*
 describe("Should send a message when logged in", () => {
  it("should not send empty message", () => {
@@ -57,6 +56,5 @@ describe("Should send a message when logged in", () => {
   });
 
 });*/
-
 
 //change userpicture ability

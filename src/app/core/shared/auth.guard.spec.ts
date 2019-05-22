@@ -2,8 +2,9 @@ import {inject, TestBed} from '@angular/core/testing';
 import {AuthGuard} from './auth.guard';
 import {LoggerService} from "./logger.service";
 import {AuthService} from "./auth.service";
-import {Router} from "@angular/router";
+import {ActivatedRouteSnapshot, Router, RouterStateSnapshot} from "@angular/router";
 import {RouterTestingModule} from "@angular/router/testing";
+import {of} from "rxjs";
 
 describe('AuthGuard', () => {
   let router: any;
@@ -27,8 +28,8 @@ describe('AuthGuard', () => {
   }));
 
   it('should return true for a logged in user', () => {
-    //authServiceMock.user.loggedIn
-    //expect(authGuard.canActivate).toEqual(true)
+   // spyOn(authGuard, 'canActivate').and.returnValue(of(true));
+  //  expect(authGuard.canActivate).toBeTruthy();
   });
 
   it('should return false for a logged out user', () => {
@@ -37,3 +38,4 @@ describe('AuthGuard', () => {
   });
 //test routing
 });
+

@@ -46,12 +46,19 @@ describe('LoggerService', () => {
     service.createLogEntry(data);
     expect(service.createLogEntry).toHaveBeenCalledTimes(1);
   });
-  /**/
+  /*
 
   it('getIp should be called', () => {
-    spyOn(service, 'getIP');
+    //spyOn(service, 'getIP');
     service.getIP();
     expect(service.getIP).toHaveBeenCalledTimes(1);
   });
+*/
+  it('getIp should return an ip address', () => {
+    spyOn(service, 'getIP').and.returnValue(of('NO'));
+    var string;
+    string  = service.getIP().toString();
 
+    expect(string).toContain('[object Object]' );
+  });
 });

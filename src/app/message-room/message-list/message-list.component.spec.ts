@@ -2,12 +2,12 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {MessageListComponent} from './message-list.component';
 import {MessageService} from "../../message/shared/message.service";
-import {Observable, of} from "rxjs";
 import {Message} from "../../shared/model/message";
 import {DOMHelper} from "../../../testing/dom-helper";
 import {RouterTestingModule} from "@angular/router/testing";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatDialogModule} from "@angular/material";
+import {of} from "rxjs";
 
 describe('MessageListComponent', () => {
   let component: MessageListComponent;
@@ -53,6 +53,7 @@ describe('MessageListComponent', () => {
     expect(messageServiceMock.getAllMessages).toHaveBeenCalledTimes(1);
   });
 
+
   describe('List Messages', () => {
     let helper: Helper;
     beforeEach(() => {
@@ -74,10 +75,10 @@ describe('MessageListComponent', () => {
       expect(component.openDialog).toHaveBeenCalledTimes(1);
     });
 
-    /* it('List should contain last text', () => {
-       component.allMessages$ = helper.getAllMessages(1);
-       expect(dh.countText('text', 'Number')).toBe(1);
-     });*/
+    it('List should contain last text', () => {
+       component.allMessagesArray = helper.getAllMessages(1);
+       expect(dh.findAll( 'Number')).toBeTruthy();
+     }); /**/
 
   });
 
@@ -103,12 +104,12 @@ describe('MessageListComponent', () => {
 class Helper {
   messages: Message[] = [];
 //allMessages$: Observable<Message[]>;
-  getAllMessages(amount: number): Observable<Message[]> {
+  getAllMessages(amount: number): Message[] {
     for (let i = 0; i < amount; i++) {
       this.messages.push(
         {id: 'abc' + i, text: 'Number' + i, userId: 'asd' + i, time: new Date()}
       );
     }
-    return of(this.messages);
+    return this.messages;
   }
 }

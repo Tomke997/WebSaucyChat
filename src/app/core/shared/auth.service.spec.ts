@@ -36,10 +36,10 @@ describe('AuthService', () => {
           code: 'auth/operation-not-allowed'
         }),
         'signInWithEmailAndPassword': of('').toPromise(),
-        'signInWithPopup': Promise.reject(),
+        'signInWithPopup': of('').toPromise(),
         'signOut': Promise.reject(),
         'currentUser': Promise.reject()
-
+        //'authState': true
       }),
       authState: of(authState)
     };
@@ -72,6 +72,7 @@ describe('AuthService', () => {
   it('?should be signed in', () => {
     spyOn(service, 'googleLogin');
     service.googleLogin();
+
     expect(service.user).toBeTruthy();
   });
 
