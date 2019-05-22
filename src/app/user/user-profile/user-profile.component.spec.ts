@@ -35,12 +35,13 @@ describe('UserProfileComponent', () => {
     const service: AuthServiceStub = new AuthServiceStub();
     expect(service).toBeTruthy();
   });
-
-  /*it('should call onClickConnect if Connect Google button clicked', () => {
-    spyOn(component, 'onClickConnect');
-    dh.clickButton('Connect Google');
-    expect(component.onClickConnect).toHaveBeenCalledTimes(1);
-  }); */
+  /*
+   it('?should call onClickConnect if Connect Google button clicked', () => {
+      spyOn(component, 'onClickConnect');
+      //component.onClickConnect();
+      dh.clickButton('Connect Google');
+      expect(component.onClickConnect).toHaveBeenCalledTimes(1);
+    });  */
 
   /*  it('should call onClickLogOut if Connect Google button clicked', () => {
       spyOn(component, 'onClickLogOut');

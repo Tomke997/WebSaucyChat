@@ -64,25 +64,30 @@ describe('AuthService', () => {
   });
 
   it('?should sign in', () => {
+    spyOn(service, 'googleLogin');
+    service.googleLogin();
+    expect(service.googleLogin).toHaveBeenCalledTimes(1);
+  });
 
-    expect(service).toBeTruthy();
+  it('?should be signed in', () => {
+    spyOn(service, 'googleLogin');
+    service.googleLogin();
+    expect(service.user).toBeTruthy();
   });
 
   it('?should sign out', () => {
-
-    expect(service).toBeTruthy();
+    spyOn(service, 'signOut');
+    service.signOut();
+    expect(service.signOut).toHaveBeenCalledTimes(1);
   });
 
   it('?should remove user', () => {
-
-    expect(service).toBeTruthy();
+    spyOn(service, 'removeUser');
+    service.removeUser();
+    expect(service.removeUser).toHaveBeenCalledTimes(1);
   });
 
 });
-
-//it should sign in
-
-//it should sign out
 
 //it should update user data
 

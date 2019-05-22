@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../core/shared/auth.service";
-import {FormGroup} from "@angular/forms";
-import {LoggerService} from "../../core/shared/logger.service";
-
-
 
 @Component({
   selector: 'app-user-profile',
@@ -13,8 +9,8 @@ import {LoggerService} from "../../core/shared/logger.service";
 export class UserProfileComponent implements OnInit {
   constructor(public auth: AuthService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
   onClickConnect()
   {
     this.auth.googleLogin();

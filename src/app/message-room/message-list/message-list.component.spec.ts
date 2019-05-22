@@ -63,6 +63,10 @@ describe('MessageListComponent', () => {
     it('Should show no img item when no messages are available', () => {
       expect(dh.count('img')).toBe(0);
     });
+    /*
+    it('Should show 1 img item when 1 message is available', () => {
+      expect(dh.count('img')).toBe(1);
+    });*/
 
     it('should call openDialog if button clicked', () => {
       spyOn(component, 'openDialog');
@@ -70,10 +74,10 @@ describe('MessageListComponent', () => {
       expect(component.openDialog).toHaveBeenCalledTimes(1);
     });
 
-   /* it('List should contain last text', () => {
-      component.allMessages$ = helper.getAllMessages(1);
-      expect(dh.countText('text', 'Number')).toBe(1);
-    });*/
+    /* it('List should contain last text', () => {
+       component.allMessages$ = helper.getAllMessages(1);
+       expect(dh.countText('text', 'Number')).toBe(1);
+     });*/
 
   });
 
@@ -84,12 +88,12 @@ describe('MessageListComponent', () => {
     });
 
     it('Should call getAllMessages on the MessageService one time on ngOnInit', () => {
-     // fixture.detectChanges();
+      // fixture.detectChanges();
       expect(messageServiceMock.getAllMessages).toHaveBeenCalledTimes(1);
     });
 
   });
-//test to do:
+  //test to do:
 
   //click send, sends message
 
@@ -98,7 +102,7 @@ describe('MessageListComponent', () => {
 
 class Helper {
   messages: Message[] = [];
-
+//allMessages$: Observable<Message[]>;
   getAllMessages(amount: number): Observable<Message[]> {
     for (let i = 0; i < amount; i++) {
       this.messages.push(
