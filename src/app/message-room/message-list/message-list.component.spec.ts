@@ -16,7 +16,7 @@ describe('MessageListComponent', () => {
   let messageServiceMock: any;
 
   beforeEach(async(() => {
-    messageServiceMock = jasmine.createSpyObj('MessageService', ['getAllMessages']);
+    messageServiceMock = jasmine.createSpyObj('MessageService', ['getAllMessages', 'sendNewMessage']);
     messageServiceMock.getAllMessages.and.returnValue(of([]));
 
     TestBed.configureTestingModule({
@@ -44,15 +44,12 @@ describe('MessageListComponent', () => {
       expect(component).toBeTruthy();
     });
 
-    //WHY 1 BUTTON?!??!?!
     it('Should be 1 button on the page', () => {
       expect(dh.count('button')).toBe(1);
     });
-
   });
 
   it('should call getAllMessages once', () => {
-    fixture.detectChanges();
     expect(messageServiceMock.getAllMessages).toHaveBeenCalledTimes(1);
   });
 
@@ -63,6 +60,28 @@ describe('MessageListComponent', () => {
       fixture.detectChanges();
     });
 
+    it('Should show no img item when no messages are available', () => {
+      expect(dh.count('img')).toBe(0);
+    });
+
+    it('should call openDialog if button clicked', () => {
+      spyOn(component, 'openDialog');
+      dh.clickButton('Image');
+      expect(component.openDialog).toHaveBeenCalledTimes(1);
+    });
+
+  });
+
+  describe('Call NgOnInit on Demand', () => {
+    let helper: Helper;
+    beforeEach(() => {
+      helper = new Helper();
+    });
+
+    it('Should call getAllMessages on the MessageService one time on ngOnInit', () => {
+      fixture.detectChanges();
+      expect(messageServiceMock.getAllMessages).toHaveBeenCalledTimes(1);
+    });
 
   });
 //test to do:

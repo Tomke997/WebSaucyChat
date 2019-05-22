@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from "@angular/fire/firestore";
-import {defer, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {AngularFireStorage} from "@angular/fire/storage";
-import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -11,28 +10,6 @@ export class FileService {
 
   constructor(private storage: AngularFireStorage,
               private db: AngularFirestore) {}
-
-  /**
-   * send file to the storage
-   */
-  public sendNewFile(newFile: File):Observable<File> {
-    const uid = this.db.createId();
-    return defer(() =>
-      this.storage.ref('message-pictures/' + uid)
-        .put(newFile, {
-          customMetadata: {
-            originalName: newFile.name,
-            userId: uid
-          }
-        })
-        .then()
-    ).pipe(
-      map(fileRef => {
-        fileRef.id = uid;
-        return fileRef;
-      })
-    );
-  }
 
   /**
    * send new image to the storage as a base64
@@ -49,6 +26,7 @@ export class FileService {
        }
      }).then()
  }
+
 /**
  * get download URL for picture
  */

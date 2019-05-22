@@ -6,20 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="52d776fa-2018-4e26-a69f-c8fbcb78edda" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/core/shared/auth.guard.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/core/shared/auth.guard.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/core/shared/auth.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/core/shared/auth.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/core/shared/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/core/shared/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/core/shared/logger.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/core/shared/logger.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/core/shared/logger.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/core/shared/logger.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/file/shared/file.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/file/shared/file.service.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/file/shared/file.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/file/shared/file.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/file/shared/file.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/model/file.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/message/shared/message.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message/shared/message.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/navbar/navbar.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/navbar/navbar.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/navbar/navbar.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/navbar/navbar.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/shared.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,41 +35,41 @@
     <session id="-1896383195">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="20" />
+          <entry key="html" value="28" />
           <entry key="js" value="8" />
           <entry key="json" value="2" />
           <entry key="scss" value="6" />
-          <entry key="ts" value="182" />
+          <entry key="ts" value="210" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="20" />
+          <entry key="HTML" value="28" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="8" />
           <entry key="SCSS" value="6" />
-          <entry key="TypeScript" value="182" />
+          <entry key="TypeScript" value="210" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="512" />
+          <entry key="html" value="527" />
           <entry key="json" value="24" />
           <entry key="scss" value="2" />
-          <entry key="ts" value="4767" />
+          <entry key="ts" value="6024" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="512" />
+          <entry key="HTML" value="527" />
           <entry key="JSON" value="24" />
           <entry key="SCSS" value="2" />
-          <entry key="TypeScript" value="4767" />
+          <entry key="TypeScript" value="6024" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
@@ -88,6 +89,27 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/core/shared/logger.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/file/shared/file.service.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/core/shared/auth.guard.spec.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
@@ -97,39 +119,42 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.spec.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/file/shared/file.service.spec.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/file/shared/file.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="51" column="3" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
+            <state relative-caret-position="-238">
+              <caret line="3" column="57" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-272">
+              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/core/shared/logger.service.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/core/shared/auth.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,8 +163,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.spec.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="70">
+              <caret line="67" column="37" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="37" />
               <folding>
                 <element signature="e#0#71#0" expanded="true" />
               </folding>
@@ -147,25 +172,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/shared/shared.module.ts">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/message/shared/message.service.spec.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+            <state relative-caret-position="293">
+              <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#58#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/core/shared/auth.guard.ts">
+        <entry file="file://$PROJECT_DIR$/src/app/core/shared/auth.service.spec.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="204">
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
               <folding>
-                <element signature="e#0#43#0" expanded="true" />
+                <element signature="e#0#46#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -201,14 +226,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/environments/environment.prod.ts" />
         <option value="$PROJECT_DIR$/src/app/file/file.module.ts" />
         <option value="$PROJECT_DIR$/src/app/file/shared/file.ts" />
         <option value="$PROJECT_DIR$/src/app/message/shared/message.ts" />
         <option value="$PROJECT_DIR$/angular.json" />
         <option value="$PROJECT_DIR$/src/app/shared/shared-routing.module.ts" />
         <option value="$PROJECT_DIR$/src/app/message-room/message-room.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.html" />
         <option value="$PROJECT_DIR$/src/styles.scss" />
         <option value="$PROJECT_DIR$/functions/src/index.ts" />
         <option value="$PROJECT_DIR$/src/app/login/login.component.html" />
@@ -230,28 +253,30 @@
         <option value="$PROJECT_DIR$/src/app/app-routing.module.ts" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.scss" />
-        <option value="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.html" />
-        <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts" />
         <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/shared/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/src/testing/dom-helper.ts" />
-        <option value="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.spec.ts" />
-        <option value="$PROJECT_DIR$/src/app/file/shared/file.service.spec.ts" />
         <option value="$PROJECT_DIR$/src/app/message/shared/message.service.spec.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/model/log.ts" />
         <option value="$PROJECT_DIR$/src/app/core/core.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/core/shared/logger.service.spec.ts" />
-        <option value="$PROJECT_DIR$/src/app/core/shared/auth.service.spec.ts" />
         <option value="$PROJECT_DIR$/src/app/core/shared/logger.service.ts" />
         <option value="$PROJECT_DIR$/src/app/core/shared/auth.service.ts" />
         <option value="$PROJECT_DIR$/src/app/message/shared/message.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/file/shared/file.service.ts" />
         <option value="$PROJECT_DIR$/src/app/core/shared/auth.guard.spec.ts" />
-        <option value="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.spec.ts" />
-        <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.spec.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/shared.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/app.component.spec.ts" />
+        <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.html" />
+        <option value="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.spec.ts" />
+        <option value="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.html" />
+        <option value="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.spec.ts" />
+        <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.spec.ts" />
+        <option value="$PROJECT_DIR$/src/app/file/shared/file.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/core/shared/logger.service.spec.ts" />
+        <option value="$PROJECT_DIR$/src/app/core/shared/auth.service.spec.ts" />
+        <option value="$PROJECT_DIR$/src/app/file/shared/file.service.spec.ts" />
       </list>
     </option>
   </component>
@@ -271,10 +296,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="548" />
-    <option name="y" value="1" />
-    <option name="width" value="1419" />
-    <option name="height" value="1090" />
+    <option name="x" value="-15" />
+    <option name="y" value="56" />
+    <option name="width" value="1252" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -289,6 +314,11 @@
             <path>
               <item name="WebSaucyChat" type="b2602c69:ProjectViewProjectNode" />
               <item name="WebSaucyChat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebSaucyChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebSaucyChat" type="462c0819:PsiDirectoryNode" />
+              <item name="coverage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WebSaucyChat" type="b2602c69:ProjectViewProjectNode" />
@@ -373,6 +403,14 @@
               <item name="WebSaucyChat" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="image-cropper-dialog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebSaucyChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebSaucyChat" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -446,12 +484,12 @@
       <workItem from="1558079500862" duration="2051000" />
       <workItem from="1558266092507" duration="2592000" />
       <workItem from="1558342245670" duration="6951000" />
-      <workItem from="1558422296126" duration="3406000" />
+      <workItem from="1558422296126" duration="16749000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160975000" />
+    <option name="totallyTimeSpent" value="174318000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -463,10 +501,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="439" y="1" width="1135" height="872" extended-state="0" />
-    <editor active="true" />
+    <frame x="-12" y="45" width="1001" height="831" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24590164" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.280083" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -478,7 +515,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32978722" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24189189" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.35193133" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="11" weight="0.22972973" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -493,36 +530,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/user/user-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cypress/fixtures/example.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cypress/support/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cypress/plugins/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cypress/support/commands.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@ngtools/webpack/src/angular_compiler_plugin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="751" column="22" selection-start-line="751" selection-start-column="22" selection-end-line="751" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@ngtools/webpack/src/loader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -611,44 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="14" column="64" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="62" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cypress/integration/first-test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -698,81 +667,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/shared/auth.service.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/shared/logger.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/shared/logger.service.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/shared/auth.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/message/shared/message.service.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/message/shared/message.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shared/model/file.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/file/shared/file.service.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/file/shared/file.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="51" column="3" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -783,27 +681,6 @@
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/shared/auth.guard.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -824,16 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shared/shared.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -841,6 +708,185 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coverage/saucy-chat-app/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1493" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coverage/saucy-chat-app/src/app/core/shared/auth.guard.ts.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coverage/saucy-chat-app/src/app/core/shared/auth.service.ts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4366" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coverage/saucy-chat-app/src/testing/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="42" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-152">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/message/shared/message.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-613">
+          <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/core/shared/auth.guard.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/core/shared/logger.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="67" column="37" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/file/shared/file.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-238">
+          <caret line="3" column="57" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/core/shared/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/core/shared/auth.service.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/file/shared/file.service.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/message/shared/message.service.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/core/shared/logger.service.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
         </state>
       </provider>
     </entry>

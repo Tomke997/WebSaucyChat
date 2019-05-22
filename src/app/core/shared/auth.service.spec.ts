@@ -26,6 +26,7 @@ describe('AuthService', () => {
     fsCollectionMock.snapshotChanges.and.returnValue(of([]));
     angularFirestoreMock.collection.and.returnValue(fsCollectionMock);
     // An anonymous user
+
     const authState: User = {
       displayName: 'ost',
       email: 'ost@ost.dk'
@@ -60,9 +61,20 @@ describe('AuthService', () => {
     service = TestBed.get(AuthService);
   });
 
-    it('should be created', () => {
-      expect(service).toBeTruthy();
-    });
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
+  it('should sign in', () => {
+
+    expect(service).toBeTruthy();
+  });
+
+  it('should sign out', () => {
+
+    expect(service).toBeTruthy();
+  });
+
 });
 
 //it should sign in

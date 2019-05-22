@@ -19,4 +19,9 @@ export class UserProfileComponent implements OnInit {
   {
     this.auth.googleLogin();
   }
+
+  onClickLogOut()
+  {
+    this.auth.signOut();
+  }
 }

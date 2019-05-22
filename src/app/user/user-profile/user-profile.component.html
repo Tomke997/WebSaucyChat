@@ -20,6 +20,6 @@
     <h3>Hi there, {{ user.displayName }}</h3>
     <h4>{{user.email}}</h4>
     <img [src]="user.imageId">
-    <button (click)="auth.signOut()">Logout</button>
+    <button (click)="onClickLogOut()">Logout</button>
   </div>
 </ng-template>

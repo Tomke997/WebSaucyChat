@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { LoggerService } from './logger.service';
+import {LoggerService} from './logger.service';
 import {AngularFirestore, AngularFirestoreModule} from "@angular/fire/firestore";
 import {Log} from "../../shared/model/log";
 import {Message} from "../../shared/model/message";
@@ -10,14 +10,15 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 describe('LoggerService', () => {
   let angularFirestoreMock: any;
- // let fsCollectionMock: any;
+  // let fsCollectionMock: any;
   let service: LoggerService;
   let http: HttpClientTestingModule;
 
+
   beforeEach(() => {
-    angularFirestoreMock = jasmine.createSpyObj('AngularFirestore', ['collection']);
-   // fsCollectionMock = jasmine.createSpyObj('collection', ['snapshotChanges', 'valueChanges']);
-   // angularFirestoreMock.collection.and.returnValue(fsCollectionMock);
+    angularFirestoreMock = jasmine.createSpyObj('AngularFirestore', ['collection', 'createId', 'doc']);
+    // fsCollectionMock = jasmine.createSpyObj('collection', ['snapshotChanges', 'valueChanges']);
+    // angularFirestoreMock.collection.and.returnValue(fsCollectionMock);
 
     TestBed.configureTestingModule({
       imports: [AngularFirestoreModule],
@@ -29,33 +30,28 @@ describe('LoggerService', () => {
     service = TestBed.get(LoggerService);
   });
 
-  /*
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-  /*
-'should create 1 log entry', () => {
 
-      const data: Log = {
-        email: 'test',
-        timeStamp: 'test',
-        ip: 'ip'
-      };
-     service.createLogEntry(data);
-      expect(service.createLogEntry).toHaveBeenCalledTimes(1);
-    });*/
-//createLogEntry test
+  // TypeError: this.afs.createId is not a function
+  it('should create 1 log entry', () => {
+
+    spyOn(service, 'createLogEntry');
+    const data: Log = {
+      email: 'test',
+      timeStamp: 'test',
+      ip: 'ip'
+    };
+    service.createLogEntry(data);
+    expect(service.createLogEntry).toHaveBeenCalledTimes(1);
+  });
+  /**/
+
+  it('getIp should be called', () => {
+    spyOn(service, 'getIP');
+    service.getIP();
+    expect(service.getIP).toHaveBeenCalledTimes(1);
+  });
+
 });
-/*
-class Helper {
-  logs: Log[] = [];
-
-  getLogEntries(amount: number): Observable<Log[]> {
-    for (let i = 0; i < amount; i++) {
-      this.logs.push(
-        {email: 'abc' + i, timeStamp: 'haa' + i, ip: 'asd' + i}
-      );
-    }
-    return of(this.logs);
-  }
-}*/

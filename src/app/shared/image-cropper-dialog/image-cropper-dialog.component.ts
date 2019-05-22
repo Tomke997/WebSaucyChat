@@ -42,7 +42,7 @@ export class ImageCropperDialogComponent implements OnInit {
   /**
    * close dialog window and send croppedImage
    */
-  SendCroppedImage() {
+  sendCroppedImage() {
     const file = {
       originalName: this.fileToUpload.name,
       base64: this.croppedImage

@@ -1,13 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserProfileComponent } from './user-profile.component';
-import {AngularFireAuth, AngularFireAuthModule} from "@angular/fire/auth";
-import {of} from "rxjs";
 import {AuthService} from "../../core/shared/auth.service";
+import {DOMHelper} from "../../../testing/dom-helper";
 
 describe('UserProfileComponent', () => {
   let component: UserProfileComponent;
   let fixture: ComponentFixture<UserProfileComponent>;
+  let dh: DOMHelper<UserProfileComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -23,6 +23,7 @@ describe('UserProfileComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(UserProfileComponent);
     component = fixture.componentInstance;
+    dh = new DOMHelper(fixture);
     fixture.detectChanges();
   });
 
@@ -35,10 +36,19 @@ describe('UserProfileComponent', () => {
     expect(service).toBeTruthy();
   });
 
+  /*it('should call onClickConnect if Connect Google button clicked', () => {
+    spyOn(component, 'onClickConnect');
+    dh.clickButton('Connect Google');
+    expect(component.onClickConnect).toHaveBeenCalledTimes(1);
+  }); */
+
+  /*  it('should call onClickLogOut if Connect Google button clicked', () => {
+      spyOn(component, 'onClickLogOut');
+      dh.clickButton('Logout');
+      expect(component.onClickLogOut).toHaveBeenCalledTimes(1);
+    }); */
 });
 
 //on click connect to be called
 
-class AuthServiceStub {
-  onClickConnect(){}
-}
+class AuthServiceStub {}

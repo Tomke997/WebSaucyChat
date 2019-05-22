@@ -16,14 +16,15 @@ export class MessageListComponent implements OnInit {
   allMessagesArray: Message[] = [];
   allMessages$: Observable<Message[]>;
   croppedImage: string = '';
-
-  constructor(private messageService: MessageService, private dialog: MatDialog,) {
+  constructor(private messageService: MessageService,
+              private dialog: MatDialog,) {
   }
 
   ngOnInit() {
     /*this.allMessages$ = this.messageService.getAllMessages();*/
     this.messageService.getAllMessages(this.allMessagesArray).subscribe( value => {
       this.allMessagesArray = value;
+      //this.allMessages$ = this.messageService.getAllMessages();
       })
   }
   /**
