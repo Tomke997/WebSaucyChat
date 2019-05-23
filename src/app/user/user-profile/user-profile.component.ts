@@ -13,7 +13,7 @@ export class UserProfileComponent implements OnInit {
     password: new FormControl('')
   });
 
-  constructor(public auth: AuthService) {
+  constructor(private auth: AuthService) {
   }
 
   ngOnInit() {

@@ -20,7 +20,7 @@ export class AuthService {
     private router: Router,
     private logger: LoggerService
   ) {
-    //// Get auth data, then get firestore user document || null
+    // Get auth data, then get firestore user document || null
     this.user = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {

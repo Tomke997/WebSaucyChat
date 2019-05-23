@@ -5,15 +5,19 @@ import {map} from "rxjs/operators";
 import {AngularFirestore} from "@angular/fire/firestore";
 import {HttpClient} from "@angular/common/http";
 import {FileService} from "../../file/shared/file.service";
+import {AuthService} from "../../core/shared/auth.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
 
-  constructor(private db: AngularFirestore,
-              private http: HttpClient,
-              private fileService: FileService) {
+  constructor(
+    private db: AngularFirestore,
+    private http: HttpClient,
+    private fileService: FileService,
+    private auth: AuthService
+  ) {
   }
 
   /**
@@ -23,8 +27,7 @@ export class MessageService {
     let newMessage: Message = {
       text: messageText,
       time: new Date(),
-      userId: "UserNo1",
-      imageId: null
+      userId: ''
     };
     console.log("message metadata was created");
     return newMessage;
@@ -37,7 +40,6 @@ export class MessageService {
     let newMessage = this.createNewMessage(messageText.text);
     const messageCollection = this.db.collection<any>('messages');
 
-    debugger;
     return defer(() =>
       messageCollection.add(newMessage)
     ).pipe(map(messageRef => {
@@ -101,7 +103,7 @@ export class MessageService {
    * This is just here since we need full crud in our ngxs store, regardless of if we use it or not
    * @param id
    */
-  deleteMessage(id: string) : Observable<any> {
+  deleteMessage(id: string): Observable<any> {
     return null;
   }
 }
