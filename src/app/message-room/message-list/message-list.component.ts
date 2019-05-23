@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {MessageService} from "../../message/shared/message.service";
 import {Observable} from "rxjs";
@@ -66,8 +66,8 @@ export class MessageListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      if(!!result) {
-        this.fileService.sendNewFileBase64(result.base64,result.originalName);
+      if (!!result) {
+        this.fileService.sendNewFileBase64(result.base64, result.originalName);
       }
     });
   }

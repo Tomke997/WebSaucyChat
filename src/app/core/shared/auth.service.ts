@@ -43,32 +43,36 @@ export class AuthService {
         this.updateUserData(credential.user)
       })
   }
+
   // Sets user data to firestore on login
   private updateUserData(user) {
-   //gets path to firestore
+    //gets path to firestore
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
 
     const data: User = {
       email: user.email,
       displayName: user.displayName
     };
+
     this.logger.createLogEntry(data);
     return userRef.set(data, {merge: true})
   }
-/*
-//not sure if needed
-  isLoggedIn()
-  {
-    return this.afAuth.auth.currentUser != null;
-  }
-*/
+
   signOut() {
     this.afAuth.auth.signOut().then(() => {
       this.router.navigate(['/login']);
     });
   }
 
-  removeUser(){
+  removeUser() {
     this.afAuth.auth.currentUser.delete();
+  }
+
+  createNewUser(email: any, password: any) {
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+  }
+
+  loginWithEmailAndPassword(email: any, password: any) {
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
 }

@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html" line="19" mnemonic="7" />
+    <bookmark url="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html" line="18" mnemonic="7" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52d776fa-2018-4e26-a69f-c8fbcb78edda" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/core/shared/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/core/shared/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/message-room/message-room.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message-room/message-room.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/message/shared/message.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message/shared/message.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/message/shared/message.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/message/shared/message.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/model/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/model/message.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/shared.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,56 +23,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-              <folding>
-                <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/core/shared/logger.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/shared/shared.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/shared/model/log.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/message-room/message-room.module.ts">
+        <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="349">
+              <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/core/shared/auth.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="58" column="3" selection-start-line="58" selection-start-column="3" selection-end-line="58" selection-end-column="3" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -149,13 +117,8 @@
         <option value="$PROJECT_DIR$/src/app/shared/image-cropper-dialog/image-cropper-dialog.component.html" />
         <option value="$PROJECT_DIR$/src/app/file/shared/file.service.ts" />
         <option value="$PROJECT_DIR$/src/app/app-routing.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html" />
         <option value="$PROJECT_DIR$/src/app/core/shared/logger.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.html" />
-        <option value="$PROJECT_DIR$/src/app/core/shared/auth.service.ts" />
         <option value="$PROJECT_DIR$/src/testing/dom-helper.ts" />
-        <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.ts" />
         <option value="$PROJECT_DIR$/src/app/message/shared/message.service.ts" />
         <option value="$PROJECT_DIR$/src/app/file/shared/file.service.spec.ts" />
         <option value="$PROJECT_DIR$/src/app/core/shared/auth.guard.ts" />
@@ -169,13 +132,19 @@
         <option value="$PROJECT_DIR$/src/app/shared/model/log.ts" />
         <option value="$PROJECT_DIR$/src/app/shared/shared.module.ts" />
         <option value="$PROJECT_DIR$/src/app/message-room/message-room.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html" />
+        <option value="$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/core/shared/auth.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-15" />
-    <option name="width" value="1559" />
-    <option name="height" value="1089" />
+    <option name="x" value="686" />
+    <option name="y" value="12" />
+    <option name="width" value="1320" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -333,7 +302,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Elisabeth/WEBSTORM/WebSaucyChat/src/app/user/user-profile/user-profile.component.spec.ts" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../devTestProgramKitten" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../functionsTodo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -395,7 +364,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191054000" />
+    <option name="totallyTimeSpent" value="196630000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -410,7 +379,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22286618" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20179136" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -576,23 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/message/shared/message.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -631,16 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/core/shared/auth.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="71" column="32" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -648,13 +590,6 @@
           <folding>
             <element signature="e#0#73#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
@@ -720,16 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/shared/model/log.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -759,11 +684,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/message-room/message-room.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
+        <state relative-caret-position="493">
+          <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/message-room/message-list/message-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="66" column="49" selection-start-line="66" selection-start-column="49" selection-end-line="66" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/core/shared/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="58" column="3" selection-start-line="58" selection-start-column="3" selection-end-line="58" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user/user-profile/user-profile.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../core/shared/auth.service";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-user-profile',
@@ -7,21 +8,40 @@ import {AuthService} from "../../core/shared/auth.service";
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-  constructor(public auth: AuthService) { }
+  loginForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl('')
+  });
 
-  ngOnInit() {}
+  constructor(public auth: AuthService) {
+  }
 
-  onClickConnect()
-  {
+  ngOnInit() {
+  }
+
+  onClickConnect() {
     this.auth.googleLogin();
   }
 
-  onClickLogOut()
-  {
+  onClickLogOut() {
     this.auth.signOut();
   }
 
-  onClickRemoveUser(){
+  onClickRemoveUser() {
     this.auth.removeUser();
+  }
+
+  createAccount() {
+    const form = this.loginForm.value;
+    this.auth.createNewUser(form.email, form.password).catch(error => {
+      console.log(error);
+    });
+  }
+
+  onSubmit() {
+    const form = this.loginForm.value;
+    this.auth.loginWithEmailAndPassword(form.email, form.password).catch(error => {
+      console.log(error);
+    });
   }
 }
