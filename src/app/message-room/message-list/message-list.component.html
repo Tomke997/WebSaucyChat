@@ -2,7 +2,7 @@
 <div class="chat_box">
   <div class="chat_logs">
 
-    <div *ngFor="let message of allMessagesArray">
+    <div *ngFor="let message of messages | async">
 
     <div  class="chat self" *ngIf="message.userId === 'UserNo1'">   <!--CURRENT USER-->
       <div class="user_photo">

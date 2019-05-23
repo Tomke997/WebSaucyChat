@@ -6,22 +6,23 @@ import {ImageCropperDialogComponent} from "./image-cropper-dialog/image-cropper-
 import {MatDialogModule, MatToolbarModule} from "@angular/material";
 import {ImageCropperModule} from "ngx-image-cropper";
 
-
 @NgModule({
   declarations: [
-    ImageCropperDialogComponent
+    ImageCropperDialogComponent,
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
     MatDialogModule,
-    ImageCropperModule
+    ImageCropperModule,
+    MatToolbarModule
   ],
   exports: [
     CommonModule,
     SharedRoutingModule,
     MatDialogModule,
-    ImageCropperModule],
+    ImageCropperModule,
+    MatToolbarModule],/**/
 
   entryComponents: [
     ImageCropperDialogComponent

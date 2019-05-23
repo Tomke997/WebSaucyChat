@@ -6,33 +6,39 @@ import {Message} from "../../shared/model/message";
 import {MatDialog} from '@angular/material';
 import {ImageCropperDialogComponent} from "../../shared/image-cropper-dialog/image-cropper-dialog.component";
 
+// ngxs store related
+import {Select, Store} from '@ngxs/store';
+import {AddMessage, GetMessages} from "../ngxs-actions/message.actions";
+import {MessageState} from "../ngsx-state/message.state";
+import {FileService} from "../../file/shared/file.service";
+
 @Component({
   selector: 'app-message-list',
   templateUrl: './message-list.component.html',
   styleUrls: ['./message-list.component.scss']
 })
+
 export class MessageListComponent implements OnInit {
+  @Select(MessageState.getMessagesList) messages: Observable<Message[]>;
+
   messageForm = new FormControl('');
   allMessagesArray: Message[] = [];
-  //allMessages$: Observable<Message[]>;
   croppedImage: string = '';
-  constructor(private messageService: MessageService,
-              private dialog: MatDialog,) {
+
+  constructor(private fileService: FileService, private dialog: MatDialog, private store: Store) {
   }
 
   ngOnInit() {
-    this.messageService.getAllMessages(this.allMessagesArray).subscribe( value => {
-      this.allMessagesArray = value;
-      });
-    // this.allMessages$ = this.messageService.getAllMessages();
+    this.store.dispatch(new GetMessages(this.allMessagesArray))
   }
+
   /**
    * send message and clear the text field
    */
   onSendClick() {
     if (this.messageForm.value !== "") {
       //send message
-      this.messageService.sendNewMessage(this.messageForm.value).subscribe();
+      this.store.dispatch(new AddMessage({text: this.messageForm.value}))
       //reset field
       this.messageForm.setValue("");
     }
@@ -61,7 +67,7 @@ export class MessageListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       if(!!result) {
-        this.messageService.sendNewFIleToStorageBase64(result.base64,result.originalName);
+        this.fileService.sendNewFileBase64(result.base64,result.originalName);
       }
     });
   }
