@@ -33,14 +33,18 @@ export class UserProfileComponent implements OnInit {
 
   createAccount() {
     const form = this.loginForm.value;
-    this.auth.createNewUser(form.email, form.password).catch(error => {
+    this.auth.createNewUser(form.email, form.password)
+      .then(() => console.log('Button clicked'))
+      .catch(error => {
       console.log(error);
     });
   }
 
   onSubmit() {
     const form = this.loginForm.value;
-    this.auth.loginWithEmailAndPassword(form.email, form.password).catch(error => {
+    this.auth.loginWithEmailAndPassword(form.email, form.password)
+      .then(() => console.log('Button clicked'))
+      .catch(error => {
       console.log(error);
     });
   }
