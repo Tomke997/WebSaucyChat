@@ -50,7 +50,8 @@ export class AuthService {
 
     const data: User = {
       email: user.email,
-      displayName: user.displayName
+      displayName: user.displayName,
+      imageId: null
     };
     this.logger.createLogEntry(data);
     return userRef.set(data, {merge: true})

@@ -48,3 +48,18 @@ exports.uploadNewImage =
       }
     });
   });
+
+exports.getMessagesInformation =
+  functions.https.onCall(async (data, context1) => {
+
+  await admin.firestore().collection('users').doc(data).get().then(stuff => {
+    const user = stuff.data();
+    if (user && user.imageId) {
+      console.log('STUFF' + user.imageId);
+    }
+  }).catch(error => {
+    console.log(error);
+  });
+});
+
+

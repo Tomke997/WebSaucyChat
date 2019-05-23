@@ -6,7 +6,8 @@ import {of} from "rxjs";
 import {AngularFireStorage, AngularFireStorageModule} from "@angular/fire/storage";
 import {AngularFirestore, AngularFirestoreModule} from "@angular/fire/firestore";
 import {AngularFireModule} from "@angular/fire";
-import {AngularFireAuthModule} from "@angular/fire/auth";
+import {AngularFireAuth, AngularFireAuthModule} from "@angular/fire/auth";
+import {User} from "../../shared/model/user";
 
 describe('FileService', () => {
   let angularFirestoreMock: any;
@@ -30,6 +31,26 @@ describe('FileService', () => {
     fsCollectionMock = jasmine.createSpyObj('collection', ['snapshotChanges', 'valueChanges']);
     fsCollectionMock.snapshotChanges.and.returnValue(of([]));
 
+    // An anonymous user
+    const authState: User = {
+      displayName: 'ost',
+      email: 'ost@ost.dk'
+    };
+
+    const mockAngularFireAuth: any = {
+      auth: jasmine.createSpyObj('auth', {
+        'signInAnonymously': Promise.reject({
+          code: 'auth/operation-not-allowed'
+        }),
+        'signInWithEmailAndPassword': of('').toPromise(),
+        'signInWithPopup': of('').toPromise(),
+        'signOut': Promise.reject(),
+        'currentUser': Promise.resolve('userId')
+        //'authState': true
+      }),
+      authState: of(authState)
+    };
+
     TestBed.configureTestingModule({
       imports: [
         AngularFirestoreModule,
@@ -39,7 +60,8 @@ describe('FileService', () => {
         HttpClientTestingModule],
       providers: [
         {provide: AngularFirestore, useValue: angularFirestoreMock},
-        {provide: AngularFireStorage, useValue: angularFireStorageMock}
+        {provide: AngularFireStorage, useValue: angularFireStorageMock},
+        {provide: AngularFireAuth, useValue: mockAngularFireAuth}
       ],
     });
     httpMock = getTestBed().get(HttpTestingController);

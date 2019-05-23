@@ -5,6 +5,9 @@ import {Observable} from "rxjs";
 import {Message} from "../../shared/model/message";
 import {MatDialog} from '@angular/material';
 import {ImageCropperDialogComponent} from "../../shared/image-cropper-dialog/image-cropper-dialog.component";
+import {AngularFireAuth} from "@angular/fire/auth";
+import {HttpClientModule} from "@angular/common/http";
+import * as firebase from "firebase";
 
 @Component({
   selector: 'app-message-list',
@@ -16,8 +19,11 @@ export class MessageListComponent implements OnInit {
   allMessagesArray: Message[] = [];
   //allMessages$: Observable<Message[]>;
   croppedImage: string = '';
+  messageToSend: string = '';
   constructor(private messageService: MessageService,
-              private dialog: MatDialog,) {
+              private dialog: MatDialog,
+              private afAuth: AngularFireAuth,
+              private http: HttpClientModule) {
   }
 
   ngOnInit() {
@@ -31,8 +37,20 @@ export class MessageListComponent implements OnInit {
    */
   onSendClick() {
     if (this.messageForm.value !== "") {
+
+      //remove line break from message
+      this.messageToSend = this.messageForm.value;
+      if(this.messageToSend.includes('\n')) {
+        this.messageToSend = this.messageToSend.replace('\n','');
+      }
+      var getMess = firebase.functions().httpsCallable('getMessagesInformation');
+      getMess('mkGVyaLuFjVIJiQXisz42qKEsh42').then( value => {
+        console.log('stuffe '+ value.data.data);
+        }
+      );
+
       //send message
-      this.messageService.sendNewMessage(this.messageForm.value).subscribe();
+      this.messageService.sendNewMessage(this.messageToSend).subscribe();
       //reset field
       this.messageForm.setValue("");
     }

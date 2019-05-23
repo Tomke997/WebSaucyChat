@@ -5,6 +5,8 @@ import {HttpClientTestingModule, HttpTestingController} from "@angular/common/ht
 import {AngularFirestore, AngularFirestoreModule} from "@angular/fire/firestore";
 import {FileService} from "../../file/shared/file.service";
 import {of} from "rxjs";
+import {User} from "../../shared/model/user";
+import {AngularFireAuth} from "@angular/fire/auth";
 
 describe('MessageService', () => {
   let angularFirestoreMock: any;
@@ -21,6 +23,26 @@ describe('MessageService', () => {
 
     fileServiceMock = jasmine.createSpyObj('FileService', ['getPictureUrl', 'upload']);
 
+    // An anonymous user
+    const authState: User = {
+      displayName: 'ost',
+      email: 'ost@ost.dk'
+    };
+
+    const mockAngularFireAuth: any = {
+      auth: jasmine.createSpyObj('auth', {
+        'signInAnonymously': Promise.reject({
+          code: 'auth/operation-not-allowed'
+        }),
+        'signInWithEmailAndPassword': of('').toPromise(),
+        'signInWithPopup': of('').toPromise(),
+        'signOut': Promise.reject(),
+        'currentUser': Promise.resolve('userId')
+        //'authState': true
+      }),
+      authState: of(authState)
+    };
+
     TestBed.configureTestingModule({
       imports: [
         AngularFirestoreModule,
@@ -29,6 +51,7 @@ describe('MessageService', () => {
       providers: [
         {provide: AngularFirestore, useValue: angularFirestoreMock},
         {provide: FileService, useValue: angularFirestoreMock},
+        {provide: AngularFireAuth, useValue: mockAngularFireAuth},
       ],
     });
     httpMock = getTestBed().get(HttpTestingController);

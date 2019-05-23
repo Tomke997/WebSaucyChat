@@ -5,6 +5,8 @@ import {map} from "rxjs/operators";
 import {AngularFirestore} from "@angular/fire/firestore";
 import {HttpClient} from "@angular/common/http";
 import {FileService} from "../../file/shared/file.service";
+import {AuthService} from "../../core/shared/auth.service";
+import {AngularFireAuth} from "@angular/fire/auth";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,8 @@ export class MessageService {
 
   constructor(private db: AngularFirestore,
               private http: HttpClient,
-              private fileService: FileService) {
+              private fileService: FileService,
+              private afAuth: AngularFireAuth) {
   }
 
   /**
@@ -23,7 +26,7 @@ export class MessageService {
     let newMessage: Message = {
       text: messageText,
       time: new Date(),
-      userId: "UserNo1",
+      userId: this.afAuth.auth.currentUser.uid,
       imageId: null
     };
     console.log("message metadata was created");
@@ -43,7 +46,6 @@ export class MessageService {
       console.log(`new message text: ${newMessage.text} ${newMessage.id}`);
       return newMessage;
     }))
-
   }
   /**
    * get all messages from database and sort them by date
@@ -64,6 +66,13 @@ export class MessageService {
               data.pictureUri = pictureUri;
             })
           }
+
+          this.fileService.getProfilePictureUrl(data.userId).subscribe( value1 => {
+            if(!!value1) {
+              data.userPicture = value1
+            }
+          });
+
           // @ts-ignore
           data.time = new Date(data.time.seconds * 1000);
           return listOfMessages.push(data);

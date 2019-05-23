@@ -4,7 +4,7 @@ import {ImageCropperDialogComponent} from "./image-cropper-dialog/image-cropper-
 
 const routes: Routes = [
   {
-    path: 'stuff',
+    path: 'messageToSend',
     component: ImageCropperDialogComponent
   }
 ];
