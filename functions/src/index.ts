@@ -19,47 +19,40 @@ exports.uploadNewImage =
           type: 'image/png',
           size: object.size
         };
-        // picture id
-        const imageId = object.name.split('/')[1];
+
+        const imagePath = object.name.split('/');
         //create file in file collection
           await admin.firestore().collection('files')
-          .doc(imageId)
+          .doc(imagePath[1])
           .set(fileMeta)
           .then(value => resolve(value))
           .catch(err => reject(err));
          console.log('new file to file collection was added');
 
-         // message metadata
-        const messageMeta = {
-          text: '',
-          time: new Date(),
-          userId: object.metadata.userId,
-          imageId: imageId
-        };
-         //create new Message
-         admin.firestore().collection('messages')
-          .add(messageMeta)
-          .then(value => resolve(value))
-          .catch(err => reject(err));
-        console.log('new message to message collection was added');
-
+         if(imagePath[0] == 'message-pictures') {
+           // message metadata
+           const messageMeta = {
+             text: '',
+             time: new Date(),
+             userId: object.metadata.userId,
+             imageId: imagePath[1]
+           };
+           //create new Message
+           admin.firestore().collection('messages')
+             .add(messageMeta)
+             .then(value => resolve(value))
+             .catch(err => reject(err));
+           console.log('new message to message collection was added');
+         } else {
+           admin.firestore().collection('users').doc(object.metadata.userId).update({
+             imageId: imagePath[1]
+           }).then().catch(error => {
+             console.log(error)
+           });
+         }
       } else {
         reject('Error happened, not enough metadata or file data');
       }
     });
   });
-
-exports.getMessagesInformation =
-  functions.https.onCall(async (data, context1) => {
-
-  await admin.firestore().collection('users').doc(data).get().then(stuff => {
-    const user = stuff.data();
-    if (user && user.imageId) {
-      console.log('STUFF' + user.imageId);
-    }
-  }).catch(error => {
-    console.log(error);
-  });
-});
-
 
