@@ -7,6 +7,11 @@ import {MessageService} from "../message/shared/message.service";
 import {FileService} from "../file/shared/file.service";
 import {SharedModule} from "../shared/shared.module";
 
+import { NgxsModule } from '@ngxs/store';
+import { MessageState } from './ngsx-state/message.state';
+//import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+
 @NgModule({
   declarations: [
     MessageListComponent
@@ -16,7 +21,12 @@ import {SharedModule} from "../shared/shared.module";
     SharedModule,
     MessageRoomRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxsModule.forRoot([
+      MessageState
+    ]),
+    //NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot()
   ],
   providers: [
     MessageService,

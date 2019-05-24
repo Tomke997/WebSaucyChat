@@ -1,19 +1,18 @@
-
 <div class="chat_box">
   <div class="chat_logs">
 
-    <div *ngFor="let message of allMessagesArray">
+    <div *ngFor="let message of messages | async">
 
     <div  class="chat self" *ngIf="message.userId === this.afAuth.auth.currentUser.uid">   <!--CURRENT USER-->
       <img class="user_photo" [src]="message.userPicture" >
 
-      <div class="user_message">
-        {{message.text}}
-        <br>
-        <img [src]="message.pictureUri" *ngIf="!!message.imageId"  style="width: 200px; height: 200px;">
-        <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
+        <div class="user_message">
+          {{message.text}}
+          <br>
+          <img [src]="message.pictureUri" *ngIf="!!message.imageId" style="width: 200px; height: 200px;">
+          <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
+        </div>
       </div>
-    </div>
 
     <div  class="chat friend" *ngIf="message.userId !== this.afAuth.auth.currentUser.uid"> <!--SOMEONE ELSE-->
       <!--<div class="user_photo">
@@ -26,17 +25,15 @@
         <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
       </div>
     </div>
-
-    </div>
-
   </div>
 
-    <form class="chat_form" (ngSubmit)="onSendClick()">
-      <textarea (keyup)="submitTextOnKeyPress($event)" style="width:242px;height: auto" [formControl]="messageForm"></textarea>
-      <!--<input style="width:242px;height: auto" type="text" [formControl]="messageForm">-->
-      <input type="submit" value="SEND">
-      <!--<input type="file" (change)="uploadNewImage($event)"  accept="image/*"/>-->
-      <button (click)="openDialog()">Image</button>
-    </form>
+  <form class="chat_form" (ngSubmit)="onSendClick()">
+    <textarea (keyup)="submitTextOnKeyPress($event)" style="width:242px;height: auto"
+              [formControl]="messageForm"></textarea>
+    <!--<input style="width:242px;height: auto" type="text" [formControl]="messageForm">-->
+    <input type="submit" value="SEND">
+    <!--<input type="file" (change)="uploadNewImage($event)"  accept="image/*"/>-->
+    <button (click)="openDialog()">Image</button>
+  </form>
 
 </div>

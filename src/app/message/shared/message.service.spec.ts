@@ -20,7 +20,6 @@ describe('MessageService', () => {
     fsCollectionMock = jasmine.createSpyObj('collection', ['snapshotChanges', 'valueChanges']);
     angularFirestoreMock.collection.and.returnValue(fsCollectionMock);
     fsCollectionMock.snapshotChanges.and.returnValue(of([]));
-
     fileServiceMock = jasmine.createSpyObj('FileService', ['getPictureUrl', 'upload']);
 
     // An anonymous user
@@ -62,7 +61,7 @@ describe('MessageService', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('getMessageCalls', () => {
+  describe('getMessageCalls x times', () => {
     beforeEach(() => {
       service.getAllMessages();
     });
@@ -78,6 +77,4 @@ describe('MessageService', () => {
       expect(fsCollectionMock.snapshotChanges).toHaveBeenCalledTimes(1);
     });
   });
-
-  //should send message
 });

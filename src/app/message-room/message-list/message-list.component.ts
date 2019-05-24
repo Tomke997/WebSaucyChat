@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {MessageService} from "../../message/shared/message.service";
 import {Observable} from "rxjs";
@@ -9,29 +9,33 @@ import {AngularFireAuth} from "@angular/fire/auth";
 import {HttpClientModule} from "@angular/common/http";
 import * as firebase from "firebase";
 
+// ngxs store related
+import {Select, Store} from '@ngxs/store';
+import {AddMessage, GetMessages} from "../ngxs-actions/message.actions";
+import {MessageState} from "../ngsx-state/message.state";
+import {FileService} from "../../file/shared/file.service";
+
 @Component({
   selector: 'app-message-list',
   templateUrl: './message-list.component.html',
   styleUrls: ['./message-list.component.scss']
 })
+
 export class MessageListComponent implements OnInit {
+  @Select(MessageState.getMessagesList) messages: Observable<Message[]>;
+
   messageForm = new FormControl('');
   allMessagesArray: Message[] = [];
-  //allMessages$: Observable<Message[]>;
   croppedImage: string = '';
-  messageToSend: string = '';
-  constructor(private messageService: MessageService,
-              private dialog: MatDialog,
-              private afAuth: AngularFireAuth,
-              private http: HttpClientModule) {
+  messageToSend: string;
+
+  constructor(private fileService: FileService, private dialog: MatDialog, private store: Store, private afAuth: AngularFireAuth) {
   }
 
   ngOnInit() {
-    this.messageService.getAllMessages(this.allMessagesArray).subscribe( value => {
-      this.allMessagesArray = value;
-      });
-    // this.allMessages$ = this.messageService.getAllMessages();
+    this.store.dispatch(new GetMessages(this.allMessagesArray))
   }
+
   /**
    * send message and clear the text field
    */
@@ -43,14 +47,9 @@ export class MessageListComponent implements OnInit {
       if(this.messageToSend.includes('\n')) {
         this.messageToSend = this.messageToSend.replace('\n','');
       }
-      var getMess = firebase.functions().httpsCallable('getMessagesInformation');
-      getMess('mkGVyaLuFjVIJiQXisz42qKEsh42').then( value => {
-        console.log('stuffe '+ value.data.data);
-        }
-      );
-
+   
       //send message
-      this.messageService.sendNewMessage(this.messageToSend).subscribe();
+      this.store.dispatch(new AddMessage({text: this.messageToSend}))
       //reset field
       this.messageForm.setValue("");
     }
@@ -78,8 +77,8 @@ export class MessageListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      if(!!result) {
-        this.messageService.sendNewFIleToStorageBase64(result.base64,result.originalName);
+      if (!!result) {
+        this.fileService.sendNewFileBase64(result.base64, result.originalName);
       }
     });
   }

@@ -1,10 +1,9 @@
 export interface Message {
   id?: string;
   text: string;
-  userId: string;
+  userId?: string;
   imageId?: string;
-  time: Date;
+  time?: Date;
   pictureUri?: string,
   userPicture?: string
-
 }
