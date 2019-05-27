@@ -48,7 +48,8 @@ export class AuthService {
   private oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
-        this.logger.createLogEntry(credential.user.email);
+        //this.logger.createLogEntry(credential.user.email);
+        this.updateUserData(credential);
       })
   }
 
@@ -56,7 +57,6 @@ export class AuthService {
   private updateUserData(user) {
     //gets path to firestore
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-
       const data: User = {
         email: user.email,
         displayName: null,
