@@ -26,19 +26,14 @@
   </div>
   <form class="chat_form" (ngSubmit)="onSendClick()">
     <div>
-    <textarea (keyup)="submitTextOnKeyPress($event)" style="width:242px;height: auto" [formControl]="messageForm">
+      <textarea (keyup)="submitTextOnKeyPress($event)" style="width:242px; height: auto" [formControl]="messageForm">
     </textarea>
-      <!--
-      <mat-form-field>
-        <input type="number" matInput placeholder="Price" formControlName="price">
-      </mat-form-field>
-      -->
     </div>
     <div>
-      <button mat-raised-button style="margin: 20px; background-color: #ADD8E6;" type="submit">
+      <button mat-raised-button style="margin-left: 20px; background-color: #ADD8E6;" type="submit">
         Send
       </button>
-      <button mat-raised-button style="margin: 20px; background-color: #ADD8E6;" (click)="openDialog()">
+      <button mat-raised-button style="margin-left: 20px; background-color: #ADD8E6;" (click)="openDialog()">
         Image
       </button>
     </div>

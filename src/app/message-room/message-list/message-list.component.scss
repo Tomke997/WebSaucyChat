@@ -8,7 +8,7 @@
 .chat_box {
   width: 500px;
   min-width: 290px;
-  height: 550px;
+  height: 850px;
   padding: 25px;
   margin: 20px auto;
 }
@@ -16,7 +16,7 @@
 .chat_logs {
   padding: 10px;
   width: 100%;
-  height: 450px;
+  height: 80%;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -57,13 +57,12 @@
 }
 
 .friend .user_message {
-  background: lightgrey;
+  background: #FFE5E5;
   color: #000000;
 }
 
 .self .user_message {
-  background: deepskyblue;
-  color: #ffffff;
+  background: #ADD8E6;
   order: -1;
 }
 
