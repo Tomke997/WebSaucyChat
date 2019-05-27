@@ -7,6 +7,8 @@ import {FileService} from "../../file/shared/file.service";
 import {of} from "rxjs";
 import {User} from "../../shared/model/user";
 import {AngularFireAuth} from "@angular/fire/auth";
+import {AppRoutingModule} from "../../app-routing.module";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('MessageService', () => {
   let angularFirestoreMock: any;
@@ -45,11 +47,12 @@ describe('MessageService', () => {
     TestBed.configureTestingModule({
       imports: [
         AngularFirestoreModule,
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        RouterTestingModule //Not using routing anywhere, why do I need it?
       ],
       providers: [
         {provide: AngularFirestore, useValue: angularFirestoreMock},
-        {provide: FileService, useValue: angularFirestoreMock},
+        {provide: FileService, useValue: fileServiceMock},
         {provide: AngularFireAuth, useValue: mockAngularFireAuth},
       ],
     });
@@ -57,24 +60,24 @@ describe('MessageService', () => {
     service = TestBed.get(MessageService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+    it('should be created', () => {
+      expect(service).toBeTruthy();
   });
 
-  describe('getMessageCalls x times', () => {
-    beforeEach(() => {
-      service.getAllMessages();
-    });
-    it('should call collection 1 time on AngularFirestore service', function () {
-      expect(angularFirestoreMock.collection).toHaveBeenCalledTimes(1);
-    });
+    describe('getMessageCalls x times', () => {
+      beforeEach(() => {
+        service.getAllMessages();
+      });
+      it('should call collection 1 time on AngularFirestore service', function () {
+        expect(angularFirestoreMock.collection).toHaveBeenCalledTimes(1);
+      });
 
-    it('should call collection with "messages" as param', () => {
-      expect(angularFirestoreMock.collection).toHaveBeenCalledWith('messages');
-    });
+      it('should call collection with "messages" as param', () => {
+        expect(angularFirestoreMock.collection).toHaveBeenCalledWith('messages');
+      });
 
-    it('should call snapshotChanges 1 time on AngularFirestore service', () => {
-      expect(fsCollectionMock.snapshotChanges).toHaveBeenCalledTimes(1);
+      it('should call snapshotChanges 1 time on AngularFirestore service', () => {
+        expect(fsCollectionMock.snapshotChanges).toHaveBeenCalledTimes(1);
+      });
     });
-  });
 });

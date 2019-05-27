@@ -1,13 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
-import {MessageService} from "../../message/shared/message.service";
 import {Observable} from "rxjs";
 import {Message} from "../../shared/model/message";
 import {MatDialog} from '@angular/material';
 import {ImageCropperDialogComponent} from "../../shared/image-cropper-dialog/image-cropper-dialog.component";
-import {AngularFireAuth} from "@angular/fire/auth";
-import {HttpClientModule} from "@angular/common/http";
-import * as firebase from "firebase";
+
 
 // ngxs store related
 import {Select, Store} from '@ngxs/store';
@@ -29,7 +26,9 @@ export class MessageListComponent implements OnInit {
   croppedImage: string = '';
   messageToSend: string;
 
-  constructor(private fileService: FileService, private dialog: MatDialog, private store: Store, private afAuth: AngularFireAuth) {
+  constructor(private fileService: FileService,
+              private dialog: MatDialog,
+              private store: Store) {
   }
 
   ngOnInit() {

@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UserProfileComponent } from './user-profile.component';
 import {AuthService} from "../../core/shared/auth.service";
 import {DOMHelper} from "../../../testing/dom-helper";
+import {ReactiveFormsModule} from "@angular/forms";
 
 describe('UserProfileComponent', () => {
   let component: UserProfileComponent;
@@ -12,7 +13,7 @@ describe('UserProfileComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UserProfileComponent ],
-      imports: [],
+      imports: [ReactiveFormsModule],
       providers: [
         {provide: AuthService, useClass: AuthServiceStub}
       ]
@@ -35,15 +36,15 @@ describe('UserProfileComponent', () => {
     const service: AuthServiceStub = new AuthServiceStub();
     expect(service).toBeTruthy();
   });
-  /*
+
    it('?should call onClickConnect if Connect Google button clicked', () => {
       spyOn(component, 'onClickConnect');
-      //component.onClickConnect();
-      dh.clickButton('Connect Google');
+      component.onClickConnect();
+     // dh.clickButton('Connect Google');
       expect(component.onClickConnect).toHaveBeenCalledTimes(1);
-    });  */
+    });  /**/
 
-  /*  it('should call onClickLogOut if Connect Google button clicked', () => {
+  /*  it('should call onClickLogOut if Logout button clicked', () => {
       spyOn(component, 'onClickLogOut');
       dh.clickButton('Logout');
       expect(component.onClickLogOut).toHaveBeenCalledTimes(1);
