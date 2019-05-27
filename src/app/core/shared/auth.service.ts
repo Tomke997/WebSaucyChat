@@ -70,7 +70,10 @@ export class AuthService {
   }
 
   createNewUser(email: any, password: any) {
-    return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then((credential) => {
+      this.updateUserData(credential.user)
+    });
   }
 
   loginWithEmailAndPassword(email: any, password: any) {
