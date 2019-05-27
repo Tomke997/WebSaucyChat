@@ -1,11 +1,11 @@
+<button mat-raised-button style="margin: 20px; background-color: #ADD8E6;" (click)="onClickLogOut()">
+  Log out
+</button>
 <div class="chat_box">
   <div class="chat_logs">
-
     <div *ngFor="let message of messages | async">
-
-    <div  class="chat self" *ngIf="message.userId === this.userId">   <!--CURRENT USER-->
-      <img class="user_photo" [src]="message.userPicture" >
-
+      <div class="chat self" *ngIf="message.userId === this.userId">   <!--CURRENT USER-->
+        <img class="user_photo" [src]="message.userPicture">
         <div class="user_message">
           {{message.text}}
           <br>
@@ -13,27 +13,34 @@
           <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
         </div>
       </div>
-
-    <div  class="chat friend" *ngIf="message.userId !== this.userId"> <!--SOMEONE ELSE-->
-      <!--<div class="user_photo">
-      </div> -->
-      <img class="user_photo" [src]="message.userPicture" >
-      <div class="user_message">
-        {{message.text}}
-        <br>
-        <img [src]="message.pictureUri"  *ngIf="!!message.imageId" style="width: 200px; height: 200px;">
-        <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
+      <div class="chat friend" *ngIf="message.userId !== this.userId"> <!--SOMEONE ELSE-->
+        <img class="user_photo" [src]="message.userPicture">
+        <div class="user_message">
+          {{message.text}}
+          <br>
+          <img [src]="message.pictureUri" *ngIf="!!message.imageId" style="width: 200px; height: 200px;">
+          <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
+        </div>
       </div>
     </div>
   </div>
-
   <form class="chat_form" (ngSubmit)="onSendClick()">
-    <textarea (keyup)="submitTextOnKeyPress($event)" style="width:242px;height: auto"
-              [formControl]="messageForm"></textarea>
-    <!--<input style="width:242px;height: auto" type="text" [formControl]="messageForm">-->
-    <input type="submit" value="SEND">
-    <!--<input type="file" (change)="uploadNewImage($event)"  accept="image/*"/>-->
-    <button (click)="openDialog()">Image</button>
+    <div>
+    <textarea (keyup)="submitTextOnKeyPress($event)" style="width:242px;height: auto" [formControl]="messageForm">
+    </textarea>
+      <!--
+      <mat-form-field>
+        <input type="number" matInput placeholder="Price" formControlName="price">
+      </mat-form-field>
+      -->
+    </div>
+    <div>
+      <button mat-raised-button style="margin: 20px; background-color: #ADD8E6;" type="submit">
+        Send
+      </button>
+      <button mat-raised-button style="margin: 20px; background-color: #ADD8E6;" (click)="openDialog()">
+        Image
+      </button>
+    </div>
   </form>
-
 </div>

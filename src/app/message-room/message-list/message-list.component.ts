@@ -5,7 +5,6 @@ import {Message} from "../../shared/model/message";
 import {MatDialog} from '@angular/material';
 import {ImageCropperDialogComponent} from "../../shared/image-cropper-dialog/image-cropper-dialog.component";
 
-
 // ngxs store related
 import {Select, Store} from '@ngxs/store';
 import {AddMessage, GetMessages} from "../ngxs-actions/message.actions";
@@ -84,5 +83,12 @@ export class MessageListComponent implements OnInit {
         this.fileService.sendNewFileBase64(result.base64, result.originalName);
       }
     });
+  }
+
+  /**
+   * log out user via AuthService
+   */
+  onClickLogOut(): void {
+    this.auth.signOut();
   }
 }

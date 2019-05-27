@@ -9,9 +9,20 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {environment} from "../environments/environment.prod";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {NgxsModule} from "@ngxs/store";
 import {CoreModule} from "./core/core.module";
 import {AuthService} from "./core/shared/auth.service";
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatListModule,
+  MatProgressSpinnerModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatToolbarModule
+} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -26,7 +37,18 @@ import {AuthService} from "./core/shared/auth.service";
     AngularFireAuthModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CoreModule
+    CoreModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatInputModule,
+    MatSidenavModule,
+    MatProgressSpinnerModule,
+    MatCardModule,
+    MatButtonModule,
+    MatListModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

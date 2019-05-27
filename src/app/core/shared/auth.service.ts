@@ -64,6 +64,7 @@ export class AuthService {
       this.router.navigate(['/login']);
     });
   }
+
   getCurrentUserId(): string {
     return this.afAuth.auth.currentUser.uid;
   }
@@ -80,6 +81,9 @@ export class AuthService {
   }
 
   loginWithEmailAndPassword(email: any, password: any) {
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password);
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      .then((credential) => {
+      this.updateUserData(credential.user)
+    });
   }
 }
