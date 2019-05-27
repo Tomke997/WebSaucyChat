@@ -3,7 +3,7 @@
 
     <div *ngFor="let message of messages | async">
 
-    <div  class="chat self" *ngIf="message.userId === this.afAuth.auth.currentUser.uid">   <!--CURRENT USER-->
+    <div  class="chat self" *ngIf="message.userId === this.userId">   <!--CURRENT USER-->
       <img class="user_photo" [src]="message.userPicture" >
 
         <div class="user_message">
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-    <div  class="chat friend" *ngIf="message.userId !== this.afAuth.auth.currentUser.uid"> <!--SOMEONE ELSE-->
+    <div  class="chat friend" *ngIf="message.userId !== this.userId"> <!--SOMEONE ELSE-->
       <!--<div class="user_photo">
       </div> -->
       <img class="user_photo" [src]="message.userPicture" >

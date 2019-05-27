@@ -64,6 +64,9 @@ export class AuthService {
       this.router.navigate(['/login']);
     });
   }
+  getCurrentUserId(): string {
+    return this.afAuth.auth.currentUser.uid;
+  }
 
   removeUser() {
     this.afAuth.auth.currentUser.delete();

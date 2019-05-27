@@ -11,6 +11,7 @@ import {Select, Store} from '@ngxs/store';
 import {AddMessage, GetMessages} from "../ngxs-actions/message.actions";
 import {MessageState} from "../ngsx-state/message.state";
 import {FileService} from "../../file/shared/file.service";
+import {AuthService} from "../../core/shared/auth.service";
 
 @Component({
   selector: 'app-message-list',
@@ -25,13 +26,16 @@ export class MessageListComponent implements OnInit {
   allMessagesArray: Message[] = [];
   croppedImage: string = '';
   messageToSend: string;
+  userId: string;
 
   constructor(private fileService: FileService,
               private dialog: MatDialog,
-              private store: Store) {
+              private store: Store,
+              private auth: AuthService) {
   }
 
   ngOnInit() {
+    this.userId = this.auth.getCurrentUserId();
     this.store.dispatch(new GetMessages(this.allMessagesArray))
   }
 
