@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../core/shared/auth.service";
 import {FormControl, FormGroup} from "@angular/forms";
+import {ImageCropperDialogComponent} from "../../shared/image-cropper-dialog/image-cropper-dialog.component";
+import {MatDialog} from "@angular/material";
+import {FileService} from "../../file/shared/file.service";
 
 @Component({
   selector: 'app-user-profile',
@@ -12,8 +15,11 @@ export class UserProfileComponent implements OnInit {
     email: new FormControl(''),
     password: new FormControl('')
   });
+  croppedImage: string = '';
 
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService,
+              private dialog: MatDialog,
+              private file: FileService) {
   }
 
   ngOnInit() {
@@ -46,6 +52,21 @@ export class UserProfileComponent implements OnInit {
       .then(() => console.log('Button clicked'))
       .catch(error => {
       console.log(error);
+    });
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ImageCropperDialogComponent, {
+      width: '600px',
+      data: {
+        file: this.croppedImage
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      if (!!result) {
+        this.file.sendNewFileBase64(result.base64, result.originalName,true);
+      }
     });
   }
 }

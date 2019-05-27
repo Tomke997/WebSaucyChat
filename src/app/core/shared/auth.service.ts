@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {switchMap} from "rxjs/operators";
+import {map, switchMap} from "rxjs/operators";
 import {Observable, of} from "rxjs";
 import {Router} from "@angular/router";
 import {auth} from 'firebase/app';
@@ -7,6 +7,7 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 import {User} from "../../shared/model/user";
 import {LoggerService} from "./logger.service";
+import {FileService} from "../../file/shared/file.service";
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +19,20 @@ export class AuthService {
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
     private router: Router,
-    private logger: LoggerService
+    private logger: LoggerService,
+    private file: FileService
   ) {
     // Get auth data, then get firestore user document || null
     this.user = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
-          return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
+          return this.afs.doc<User>(`users/${user.uid}`).valueChanges().pipe(switchMap(value => {
+            const currentUser = value;
+            return this.file.getProfilePictureUrl(user.uid).pipe(map(downloadUri => {
+              currentUser.imageId = downloadUri;
+              return currentUser;
+            }))
+          }))
         } else {
           return of(null)
         }
@@ -40,7 +48,7 @@ export class AuthService {
   private oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
-        this.updateUserData(credential.user)
+        this.logger.createLogEntry(credential.user.email);
       })
   }
 
@@ -49,11 +57,11 @@ export class AuthService {
     //gets path to firestore
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
 
-    const data: User = {
-      email: user.email,
-      displayName: user.displayName,
-      imageId: null
-    };
+      const data: User = {
+        email: user.email,
+        displayName: null,
+        imageId: null
+      };
 
     this.logger.createLogEntry(data);
     return userRef.set(data, {merge: true})
@@ -83,7 +91,7 @@ export class AuthService {
   loginWithEmailAndPassword(email: any, password: any) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((credential) => {
-      this.updateUserData(credential.user)
+        this.logger.createLogEntry(credential.user.email);
     });
   }
 }

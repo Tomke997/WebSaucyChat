@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { UserRoutingModule } from './user-routing.module';
 import {UserProfileComponent} from "./user-profile/user-profile.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FileModule} from "../file/file.module";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   declarations: [UserProfileComponent],
@@ -11,7 +13,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     CommonModule,
     UserRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FileModule,
+    SharedModule,
   ],
   exports: [
     FormsModule,

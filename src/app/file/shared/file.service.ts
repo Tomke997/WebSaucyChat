@@ -18,11 +18,15 @@ export class FileService {
   /**
    * send new image to the storage as a base64
    */
- sendNewFileBase64(base64Image: string, originalFileName: string): Observable<any> {
+ sendNewFileBase64(base64Image: string, originalFileName: string, userImage?: boolean): Observable<any> {
+   let storagePath = 'message-pictures/';
+   if (userImage) {
+     storagePath = 'user-pictures/';
+   }
    const uid = this.db.createId();
    const split = base64Image.split(',');
    const base64EncodedImageString = split[1];
-   return from(this.storage.ref('message-pictures/' + uid).putString(base64EncodedImageString,'base64',
+   return from(this.storage.ref(storagePath + uid).putString(base64EncodedImageString,'base64',
      {
        customMetadata: {
          originalName: originalFileName,
@@ -54,7 +58,9 @@ export class FileService {
               return value1;
             })
           );}
-        return new Observable();
+        return this.storage.ref('user-pictures/face.jpeg').getDownloadURL().pipe(map(value2 => {
+          return value2;
+        }));
       })
     )
   }

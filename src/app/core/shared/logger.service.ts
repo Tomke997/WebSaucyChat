@@ -13,27 +13,32 @@ export class LoggerService {
               private http: HttpClient
   ) {}
 
-  createLogEntry(userData) {
+  createLogEntry(userEmail) {
     //gets the firestore path to save to
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`logger/${this.afs.createId()}`);
 
     this.getIP().subscribe(log => {
       const data: Log = {
-        email: userData.email,
+        email: userEmail,
         timeStamp: Date().toString(),
         ip: log.ip
       };
       //saves the log to the firestore path
       return userRef.set(data, {merge: true})
-    })
+    },
+      error1 => {
+      console.log(error1);
+      }
+    )
   }
 
   getIP()
   {
     return this.http.get<Log>('https://jsonip.com')// ...using http request, get json ip
       .pipe(
-        tap(log => {}),
-        catchError((error:any) => Observable.throw(error.json().error || 'Server error'))//...errors if any
+
+        tap(log => {})
+       // catchError((error:any) => Observable.throw(error.json().error || 'Server error'))//...errors if any
       )
   }
 }
