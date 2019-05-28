@@ -7,7 +7,7 @@ import {ImageCropperDialogComponent} from "../../shared/image-cropper-dialog/ima
 
 // ngxs store related
 import {Select, Store} from '@ngxs/store';
-import {AddMessage, GetMessages} from "../ngxs-actions/message.actions";
+import {AddMessage, GetMessages, StopMessage} from "../ngxs-actions/message.actions";
 import {MessageState} from "../ngsx-state/message.state";
 import {FileService} from "../../file/shared/file.service";
 import {AuthService} from "../../core/shared/auth.service";
@@ -35,7 +35,7 @@ export class MessageListComponent implements OnInit {
 
   ngOnInit() {
     this.userId = this.auth.getCurrentUserId();
-    this.store.dispatch(new GetMessages(this.allMessagesArray))
+    this.store.dispatch(new GetMessages(this.allMessagesArray));
   }
 
   /**
@@ -89,6 +89,7 @@ export class MessageListComponent implements OnInit {
    * log out user via AuthService
    */
   onClickLogOut(): void {
+    this.store.dispatch(new StopMessage());
     this.auth.signOut();
   }
 }
