@@ -45,7 +45,7 @@ export class AuthService {
     return this.oAuthLogin(provider);
   }
 
-  private oAuthLogin(provider) {
+  oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
         //this.logger.createLogEntry(credential.user.email);
@@ -54,7 +54,7 @@ export class AuthService {
   }
 
   // Sets user data to firestore on login
-  private updateUserData(user) {
+  updateUserData(user) {
     //gets path to firestore
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
       const data: User = {

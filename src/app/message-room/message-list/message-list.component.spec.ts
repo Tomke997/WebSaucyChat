@@ -18,13 +18,17 @@ describe('MessageListComponent', () => {
   let dh: DOMHelper<MessageListComponent>;
   let messageServiceMock: any;
   let fileServiceMock: any;
+  let authServiceMock: any;
   let matDialogMock: any;
   let store: Store;
 
   beforeEach(async(() => {
 
     fileServiceMock = jasmine.createSpyObj('FileService', ['']);
-    matDialogMock = jasmine.createSpyObj('MatDialog', ['']);
+    authServiceMock = jasmine.createSpyObj('AuthService', ['getCurrentUserId']);
+    matDialogMock = jasmine.createSpyObj('MatDialog', ['open']);
+    matDialogMock.open.and.returnValue(of([]));
+
     messageServiceMock = jasmine.createSpyObj('MessageService', ['getAllMessages']);
     messageServiceMock.getAllMessages.and.returnValue(of([]));
 
@@ -41,7 +45,7 @@ describe('MessageListComponent', () => {
         {provide: MessageService, useValue: messageServiceMock},
         {provide: MatDialog, useValue: matDialogMock},
         {provide: FileService, useValue: fileServiceMock},
-        {provide: AuthService, useClass: authStub}
+        {provide: AuthService, useValue: authServiceMock}
       ]
     })
       .compileComponents();
@@ -66,7 +70,7 @@ describe('MessageListComponent', () => {
       expect(component).toBeTruthy();
     });
 
-    it('Should be 1 buttons on the page', () => {
+    it('Should be 3 buttons on the page', () => {
       expect(dh.count('button')).toBe(3);
     });
   });
@@ -76,29 +80,13 @@ describe('MessageListComponent', () => {
     expect(messageServiceMock.getAllMessages).toHaveBeenCalledTimes(1);
   });
 
-  describe('List Products', () => {
-    let helper: Helper;
+  describe('Should be truthy', () => {
     beforeEach(() => {
-      helper = new Helper();
       fixture.detectChanges();
+    });
+    it('should call onSendClick ', () => {
+      component.onSendClick();
+      expect(component).toBeTruthy();
     });
   });
 });
-
-class Helper {
-  messages: Message[] = [];
-
-  getAllMessages(amount: number): Observable<Message[]> {
-    for (let i = 0; i < amount; i++) {
-      this.messages.push(
-        {id: 'abc' + i, text: 'haa' + i, userId: 'asd' + i, time: new Date()}
-      );
-    }
-    return of(this.messages);
-  }
-}
-
-class authStub {
-  getCurrentUserId() {
-  }
-}

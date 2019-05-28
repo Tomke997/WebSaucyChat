@@ -7,6 +7,7 @@ import {RouterTestingModule} from "@angular/router/testing";
 import {User} from "../../shared/model/user";
 import {of} from "rxjs";
 import {FileService} from "../../file/shared/file.service";
+import {auth} from "firebase";
 
 describe('AuthService', () => {
   let angularFirestoreMock: any;
@@ -15,6 +16,7 @@ describe('AuthService', () => {
   let fileServiceMock: any;
   let service: AuthService;
   let authMock: any;
+  let mockAngularFireAuth: any;
 
 
   beforeEach(() => {
@@ -23,7 +25,6 @@ describe('AuthService', () => {
     angularFirestoreMock = jasmine.createSpyObj('AngularFirestore', ['collection']);
     authMock = jasmine.createSpyObj('AuthMock', ['signInWithEmailAndPassword']);
     fsCollectionMock = jasmine.createSpyObj('collection', ['snapshotChanges', 'valueChanges']);
-
     fsCollectionMock.snapshotChanges.and.returnValue(of([]));
     angularFirestoreMock.collection.and.returnValue(fsCollectionMock);
 
@@ -32,17 +33,17 @@ describe('AuthService', () => {
       displayName: 'ost',
       email: 'ost@ost.dk'
     };
-
-    const mockAngularFireAuth: any = {
+     mockAngularFireAuth = {
       auth: jasmine.createSpyObj('auth', {
         'signInAnonymously': Promise.reject({
           code: 'auth/operation-not-allowed'
         }),
         'signInWithEmailAndPassword': of('').toPromise(),
+        'oAuthLogin': of('').toPromise(),
         'signInWithPopup': of('').toPromise(),
         'signOut': Promise.reject(),
-        'currentUser': Promise.reject()
-        //'authState': true
+        'currentUser': of('').toPromise(),
+        'authState': true
       }),
       authState: of(authState)
     };
@@ -93,4 +94,18 @@ describe('AuthService', () => {
     expect(service.removeUser).toHaveBeenCalledTimes(1);
   });
 
+  it('should call googleLogin and be truthy', () => {
+    service.googleLogin();
+    expect(service).toBeTruthy();
+  });
+
+  it('should call oAuthLogin and be truthy', () => {
+    service.oAuthLogin(new auth.GoogleAuthProvider());
+    expect(service).toBeTruthy();
+  });
+
+  it('should call getCurrentUserId and be truthy', () => {
+    service.getCurrentUserId();
+    expect(service).toBeTruthy();
+  });
 });

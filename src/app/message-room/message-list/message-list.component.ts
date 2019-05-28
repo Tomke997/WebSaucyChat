@@ -57,7 +57,7 @@ export class MessageListComponent implements OnInit, AfterViewChecked {
       }
    
       //send message
-      this.store.dispatch(new AddMessage({text: this.messageToSend}))
+      this.store.dispatch(new AddMessage({text: this.messageToSend}));
       //reset field
       this.messageForm.setValue("");
     }

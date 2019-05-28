@@ -2,10 +2,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ImageCropperDialogComponent } from './image-cropper-dialog.component';
 import {ImageCropperModule} from "ngx-image-cropper";
 import {MatDialogRef} from "@angular/material";
+import {of} from "rxjs";
 
 describe('ImageCropperDialogComponent', () => {
   let component: ImageCropperDialogComponent;
   let fixture: ComponentFixture<ImageCropperDialogComponent>;
+
 
  beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -27,5 +29,7 @@ describe('ImageCropperDialogComponent', () => {
   });
 });
 
-class MatDialogRefStub<ImageCropperDialogComponent> {}
+class MatDialogRefStub<ImageCropperDialogComponent> {
+
+}
 

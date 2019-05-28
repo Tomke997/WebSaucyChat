@@ -2,7 +2,7 @@ import {getTestBed, TestBed} from '@angular/core/testing';
 
 import {FileService} from './file.service';
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
-import {of} from "rxjs";
+import {Observable, of} from "rxjs";
 import {AngularFireStorage, AngularFireStorageModule} from "@angular/fire/storage";
 import {AngularFirestore, AngularFirestoreModule} from "@angular/fire/firestore";
 import {AngularFireModule} from "@angular/fire";
@@ -25,7 +25,7 @@ describe('FileService', () => {
     refMock.getDownloadURL.and.returnValue(of(''));
 
     //AngularFirestore mock
-    angularFirestoreMock = jasmine.createSpyObj('AngularFirestore', ['collection', 'createId']);//create id just added
+    angularFirestoreMock = jasmine.createSpyObj('AngularFirestore', ['collection', 'createId']);
     angularFirestoreMock.collection.and.returnValue(fsCollectionMock);
     fsCollectionMock = jasmine.createSpyObj('collection', ['snapshotChanges', 'valueChanges']);
     fsCollectionMock.snapshotChanges.and.returnValue(of([]));
@@ -83,4 +83,8 @@ describe('FileService', () => {
     expect(service.sendNewFileBase64).toHaveBeenCalledTimes(1);
   });
 
+  it('should call getPictureUrl and be truthy', () => {
+    service.getPictureUrl('s');
+    expect(service).toBeTruthy();
+  });
 });

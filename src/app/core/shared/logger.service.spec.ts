@@ -11,15 +11,18 @@ describe('LoggerService', () => {
   let angularFirestoreMock: any;
   let service: LoggerService;
   let http: HttpClientTestingModule;
+ // let httpMock: any;
 
 
   beforeEach(() => {
     angularFirestoreMock = jasmine.createSpyObj('AngularFirestore', ['collection', 'createId', 'doc']);
+   // httpMock = jasmine.createSpyObj('Http', ['get']);
 
     TestBed.configureTestingModule({
       imports: [AngularFirestoreModule],
       providers: [
         {provide: AngularFirestore, useValue: angularFirestoreMock},
+       // {provide: HttpClient, useValue: httpMock},
         {provide: HttpClient, useValue: http}
       ]
     });
