@@ -3,7 +3,7 @@ import {Message} from "../../shared/model/message";
 import {
   AddMessage,
   DeleteMessage,
-  GetMessages,
+  GetMessages, StopMessage,
   UpdateMessage
 } from "../ngxs-actions/message.actions";
 import {MessageService} from "../../message/shared/message.service";
@@ -16,7 +16,6 @@ export class MessageStateModel {
   name: 'messages',
   defaults: {
     messages: [
-      {text: 'test'}
     ],
   }
 })
@@ -25,6 +24,8 @@ export class MessageState {
   constructor(private messageService: MessageService) {
   }
 
+  messageSubscription: any;
+
   @Selector()
   static getMessagesList(state: MessageStateModel) {
     return state.messages
@@ -32,13 +33,19 @@ export class MessageState {
 
   @Action(GetMessages)
   getMessages({getState, setState}: StateContext<MessageStateModel>, {payload}: GetMessages) {
-    return this.messageService.getAllMessages(payload).subscribe(result => {
+    this.messageSubscription = this.messageService.getAllMessages(payload).subscribe(result => {
       const state = getState();
       setState({
         ...state,
         messages: result,
       });
-    })
+    });
+    return this.messageSubscription;
+  }
+
+  @Action(StopMessage)
+  stopMessage({}: StateContext<MessageStateModel>) {
+    this.messageSubscription.unsubscribe();
   }
 
   @Action(AddMessage)

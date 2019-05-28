@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewChecked, AfterViewInit, Component, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {Observable} from "rxjs";
 import {Message} from "../../shared/model/message";
@@ -7,7 +7,7 @@ import {ImageCropperDialogComponent} from "../../shared/image-cropper-dialog/ima
 
 // ngxs store related
 import {Select, Store} from '@ngxs/store';
-import {AddMessage, GetMessages} from "../ngxs-actions/message.actions";
+import {AddMessage, GetMessages, StopMessage} from "../ngxs-actions/message.actions";
 import {MessageState} from "../ngsx-state/message.state";
 import {FileService} from "../../file/shared/file.service";
 import {AuthService} from "../../core/shared/auth.service";
@@ -18,10 +18,11 @@ import {AuthService} from "../../core/shared/auth.service";
   styleUrls: ['./message-list.component.scss']
 })
 
-export class MessageListComponent implements OnInit {
+export class MessageListComponent implements OnInit, AfterViewChecked {
   @Select(MessageState.getMessagesList) messages: Observable<Message[]>;
 
   messageForm = new FormControl('');
+  container: HTMLElement;
   allMessagesArray: Message[] = [];
   croppedImage: string = '';
   messageToSend: string;
@@ -35,7 +36,12 @@ export class MessageListComponent implements OnInit {
 
   ngOnInit() {
     this.userId = this.auth.getCurrentUserId();
-    this.store.dispatch(new GetMessages(this.allMessagesArray))
+    this.store.dispatch(new GetMessages(this.allMessagesArray));
+  }
+
+  ngAfterViewChecked() {
+    this.container = document.getElementById("messageList");
+    this.container.scrollTop = this.container.scrollHeight;
   }
 
   /**
@@ -89,6 +95,7 @@ export class MessageListComponent implements OnInit {
    * log out user via AuthService
    */
   onClickLogOut(): void {
+    this.store.dispatch(new StopMessage());
     this.auth.signOut();
   }
 }
