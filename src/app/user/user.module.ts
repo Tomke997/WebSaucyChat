@@ -18,10 +18,12 @@ import {MatButtonModule, MatCardModule} from "@angular/material";
     FileModule,
     SharedModule,
     MatCardModule,
-    MatButtonModule,
+    MatButtonModule
   ],
   exports: [
     FormsModule,
-    ReactiveFormsModule]
+    ReactiveFormsModule,
+    MatCardModule,
+    MatButtonModule]
 })
 export class UserModule { }

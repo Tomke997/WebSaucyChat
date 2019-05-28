@@ -6,17 +6,20 @@ import {LoggerService} from "./logger.service";
 import {RouterTestingModule} from "@angular/router/testing";
 import {User} from "../../shared/model/user";
 import {of} from "rxjs";
+import {FileService} from "../../file/shared/file.service";
 
 describe('AuthService', () => {
   let angularFirestoreMock: any;
   let fsCollectionMock: any;
   let loggerServiceMock: any;
+  let fileServiceMock: any;
   let service: AuthService;
   let authMock: any;
 
 
   beforeEach(() => {
     loggerServiceMock = jasmine.createSpyObj(['createLogEntry']);
+    fileServiceMock = jasmine.createSpyObj(['getProfilePictureUrl']);
     angularFirestoreMock = jasmine.createSpyObj('AngularFirestore', ['collection']);
     authMock = jasmine.createSpyObj('AuthMock', ['signInWithEmailAndPassword']);
     fsCollectionMock = jasmine.createSpyObj('collection', ['snapshotChanges', 'valueChanges']);
@@ -54,6 +57,8 @@ describe('AuthService', () => {
         {provide: AngularFirestore, useValue: angularFirestoreMock},
         {provide: AngularFireAuth, useValue: mockAngularFireAuth},
         {provide: LoggerService, useValue: loggerServiceMock},
+        {provide: FileService, useValue: fileServiceMock}
+
       ],
     });
     service = TestBed.get(AuthService);
@@ -63,38 +68,29 @@ describe('AuthService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('?should sign in', () => {
+  it('should sign in', () => {
     spyOn(service, 'googleLogin');
     service.googleLogin();
     expect(service.googleLogin).toHaveBeenCalledTimes(1);
   });
 
-  it('?should be signed in', () => {
+  it('should be signed in', () => {
     spyOn(service, 'googleLogin');
     service.googleLogin();
 
     expect(service.user).toBeTruthy();
   });
 
-  it('?should sign out', () => {
+  it('should sign out', () => {
     spyOn(service, 'signOut');
     service.signOut();
     expect(service.signOut).toHaveBeenCalledTimes(1);
   });
 
-  it('?should remove user', () => {
+  it('should remove user', () => {
     spyOn(service, 'removeUser');
     service.removeUser();
     expect(service.removeUser).toHaveBeenCalledTimes(1);
   });
 
 });
-
-//it should update user data
-
-/*
-private afAuth: AngularFireAuth,
-    private afs: AngularFirestore,
-    private router: Router,
-    private logger: LoggerService
- */

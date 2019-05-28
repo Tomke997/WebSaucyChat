@@ -1,4 +1,4 @@
-<button mat-raised-button style="margin: 20px; background-color: #ADD8E6;" (click)="onClickLogOut()">
+<button class="msgLogoutBtn" mat-raised-button style="margin: 20px; background-color: #ADD8E6;" (click)="onClickLogOut()">
   Log out
 </button>
 <div class="chat_box">
@@ -28,11 +28,11 @@
     <mat-card style="margin-top: 20px;">
       <form class="chat_form" (ngSubmit)="onSendClick()">
         <div>
-      <textarea id="messageTextArea" (keyup)="submitTextOnKeyPress($event)" style="width:242px; height: auto" [formControl]="messageForm">
+      <textarea class="messageTextArea" (keyup)="submitTextOnKeyPress($event)" style="width:242px; height: auto" [formControl]="messageForm">
     </textarea>
         </div>
         <div>
-          <button mat-raised-button style="margin-left: 20px; background-color: #ADD8E6;" type="submit">
+          <button class="sendMessageBtn" mat-raised-button style="margin-left: 20px; background-color: #ADD8E6;" type="submit">
             Send
           </button>
           <button mat-raised-button style="margin-left: 20px; background-color: #ADD8E6;" (click)="openDialog()">

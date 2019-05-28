@@ -11,7 +11,8 @@ export class ImageCropperDialogComponent implements OnInit {
   croppedImage: any = '';
   imageChangedEvent: any = '';
   fileToUpload: File;
-  constructor(public dialogRef: MatDialogRef<ImageCropperDialogComponent>) { }
+  constructor(
+    public dialogRef: MatDialogRef<ImageCropperDialogComponent>) { }
 
   ngOnInit() {
     this.initializeImageDialog();

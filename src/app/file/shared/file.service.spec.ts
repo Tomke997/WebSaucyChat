@@ -16,7 +16,6 @@ describe('FileService', () => {
   let httpMock: HttpTestingController;
   let service: FileService;
   let refMock;
-  let createIdMock;
 
   beforeEach(() => {
     // angularFireStorage mock
@@ -85,14 +84,3 @@ describe('FileService', () => {
   });
 
 });
-
-/*
- public sendNewFile(newFile: File):Observable<File> {
- sendNewFileBase64(base64Image: string, originalFileName: string) {
-  getPictureUrl(id: string): Observable<string> {
-
-    getPictureUrl(id: string): Observable<string> {
-    return this.storage.ref('message-pictures/' + id)
-      .getDownloadURL();
-  }
- */

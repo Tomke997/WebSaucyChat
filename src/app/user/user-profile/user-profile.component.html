@@ -8,13 +8,13 @@
       <h3>Hello, Guest</h3>
       <p>Login to get started...</p>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <input id="emailInput" type="email" placeholder="Email" style="margin-right: 20px" formControlName="email">
-        <input id="passwordInput" type="password" placeholder="Password" formControlName="password">
+        <input class="emailInput" type="email" placeholder="Email" style="margin-right: 20px" formControlName="email">
+        <input class="passwordInput" type="password" placeholder="Password" formControlName="password">
         <br>
-        <button id="loginButton" mat-raised-button style="margin-top: 20px; background-color: #ADD8E6;" type="submit">
+        <button class="loginBtn" mat-raised-button style="margin-top: 20px; background-color: #ADD8E6;" type="submit">
           Login
         </button>
-        <button mat-raised-button style="margin-left: 20px; margin-top: 20px; background-color: #ADD8E6;"
+        <button class="createUserBtn" mat-raised-button style="margin-left: 20px; margin-top: 20px; background-color: #ADD8E6;"
                 type="button"
                 (click)="createAccount()">
           Create account
@@ -36,16 +36,16 @@
       <h4>{{user.email}}</h4>
       <img class="center-element" [src]="user.imageId" style="height: 200px">
       <div>
-        <button mat-raised-button style="margin-top: 20px; background-color: #ADD8E6;" (click)="onClickLogOut()">
+        <button class="logoutBtn" mat-raised-button style="margin-top: 20px; background-color: #ADD8E6;" (click)="onClickLogOut()">
           Logout
         </button>
-        <button mat-raised-button style="margin-left: 20px; margin-top: 20px; background-color: #ADD8E6;" (click)="onClickRemoveUser()">
+        <button class="removeUserBtn" mat-raised-button style="margin-left: 20px; margin-top: 20px; background-color: #ADD8E6;" (click)="onClickRemoveUser()">
           Remove user
         </button>
         <button mat-raised-button style="margin-left: 20px; margin-top: 20px; background-color: #ADD8E6;" (click)="openDialog()">
           Change Profile Picture
         </button>
-        <button mat-raised-button style="margin-left: 20px; margin-top: 20px; background-color: #FFE5E5;" routerLink="/message-room">
+        <button class="chatBtn" mat-raised-button style="margin-left: 20px; margin-top: 20px; background-color: #FFE5E5;" routerLink="/message-room">
           Go to chat
         </button>
       </div>

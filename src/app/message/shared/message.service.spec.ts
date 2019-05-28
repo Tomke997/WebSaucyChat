@@ -80,4 +80,10 @@ describe('MessageService', () => {
         expect(fsCollectionMock.snapshotChanges).toHaveBeenCalledTimes(1);
       });
     });
+
+  it('getAllMessages should be called', () => {
+    spyOn(service, 'getAllMessages');
+    service.getAllMessages();
+    expect(service.getAllMessages).toHaveBeenCalledTimes(1);
+  });
 });
