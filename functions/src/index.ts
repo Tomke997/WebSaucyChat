@@ -56,3 +56,7 @@ exports.uploadNewImage =
     });
   });
 
+exports.OnUserDelete = functions.auth.user().onDelete(async (user) => {
+  return  admin.firestore().collection('users').doc(user.uid).delete().then();
+});
+
