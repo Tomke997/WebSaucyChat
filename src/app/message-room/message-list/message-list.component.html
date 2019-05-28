@@ -28,7 +28,7 @@
     <mat-card style="margin-top: 20px;">
       <form class="chat_form" (ngSubmit)="onSendClick()">
         <div>
-      <textarea (keyup)="submitTextOnKeyPress($event)" style="width:242px; height: auto" [formControl]="messageForm">
+      <textarea id="messageTextArea" (keyup)="submitTextOnKeyPress($event)" style="width:242px; height: auto" [formControl]="messageForm">
     </textarea>
         </div>
         <div>

@@ -8,10 +8,10 @@
       <h3>Hello, Guest</h3>
       <p>Login to get started...</p>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <input type="email" placeholder="Email" style="margin-right: 20px" formControlName="email">
-        <input type="password" placeholder="Password" formControlName="password">
+        <input id="emailInput" type="email" placeholder="Email" style="margin-right: 20px" formControlName="email">
+        <input id="passwordInput" type="password" placeholder="Password" formControlName="password">
         <br>
-        <button mat-raised-button style="margin-top: 20px; background-color: #ADD8E6;" type="submit">
+        <button id="loginButton" mat-raised-button style="margin-top: 20px; background-color: #ADD8E6;" type="submit">
           Login
         </button>
         <button mat-raised-button style="margin-left: 20px; margin-top: 20px; background-color: #ADD8E6;"
