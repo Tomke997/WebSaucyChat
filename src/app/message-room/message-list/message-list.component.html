@@ -2,40 +2,44 @@
   Log out
 </button>
 <div class="chat_box">
-  <div class="chat_logs">
-    <div *ngFor="let message of messages | async">
-      <div class="chat self" *ngIf="message.userId === this.userId">   <!--CURRENT USER-->
-        <img class="user_photo" [src]="message.userPicture">
-        <div class="user_message">
-          {{message.text}}
-          <br>
-          <img [src]="message.pictureUri" *ngIf="!!message.imageId" style="width: 200px; height: 200px;">
-          <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
+  <mat-card style="height: 850px; background: #FFE5E5">
+    <mat-card class="chat_logs">
+      <div *ngFor="let message of messages | async">
+        <div class="chat self" *ngIf="message.userId === this.userId">   <!--CURRENT USER-->
+          <img class="user_photo" [src]="message.userPicture">
+          <div class="user_message">
+            {{message.text}}
+            <br>
+            <img [src]="message.pictureUri" *ngIf="!!message.imageId" style="width: 200px; height: 200px;">
+            <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
+          </div>
+        </div>
+        <div class="chat friend" *ngIf="message.userId !== this.userId"> <!--SOMEONE ELSE-->
+          <img class="user_photo" [src]="message.userPicture">
+          <div class="user_message">
+            {{message.text}}
+            <br>
+            <img [src]="message.pictureUri" *ngIf="!!message.imageId" style="width: 200px; height: 200px;">
+            <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
+          </div>
         </div>
       </div>
-      <div class="chat friend" *ngIf="message.userId !== this.userId"> <!--SOMEONE ELSE-->
-        <img class="user_photo" [src]="message.userPicture">
-        <div class="user_message">
-          {{message.text}}
-          <br>
-          <img [src]="message.pictureUri" *ngIf="!!message.imageId" style="width: 200px; height: 200px;">
-          <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <form class="chat_form" (ngSubmit)="onSendClick()">
-    <div>
+    </mat-card>
+    <mat-card style="margin-top: 20px;">
+      <form class="chat_form" (ngSubmit)="onSendClick()">
+        <div>
       <textarea (keyup)="submitTextOnKeyPress($event)" style="width:242px; height: auto" [formControl]="messageForm">
     </textarea>
-    </div>
-    <div>
-      <button mat-raised-button style="margin-left: 20px; background-color: #ADD8E6;" type="submit">
-        Send
-      </button>
-      <button mat-raised-button style="margin-left: 20px; background-color: #ADD8E6;" (click)="openDialog()">
-        Image
-      </button>
-    </div>
-  </form>
+        </div>
+        <div>
+          <button mat-raised-button style="margin-left: 20px; background-color: #ADD8E6;" type="submit">
+            Send
+          </button>
+          <button mat-raised-button style="margin-left: 20px; background-color: #ADD8E6;" (click)="openDialog()">
+            Image
+          </button>
+        </div>
+      </form>
+    </mat-card>
+  </mat-card>
 </div>

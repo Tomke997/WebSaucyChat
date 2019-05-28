@@ -3,28 +3,52 @@
 
 <!-- User NOT logged in -->
 <ng-template #guest>
-  <h3>Hi, Guest</h3>
-  <p>Login to get started...</p>
-  <button (click)="onClickConnect()">
-    <i class="fa fa-google"></i> Connect Google
-  </button>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <input type="email" placeholder="Email" formControlName="email">
-    <input type="password" placeholder="Password" formControlName="password">
-    <button type="button" (click)="createAccount()">Create account</button>
-    <button type="submit">Log in with email and password</button>
-  </form>
+  <mat-card class="vertical-center" style="height: 250px; width: 400px;">
+    <div>
+      <h3>Hello, Guest</h3>
+      <p>Login to get started...</p>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <input type="email" placeholder="Email" style="margin-right: 20px" formControlName="email">
+        <input type="password" placeholder="Password" formControlName="password">
+        <br>
+        <button mat-raised-button style="margin-top: 20px; background-color: #ADD8E6;" type="submit">
+          Login
+        </button>
+        <button mat-raised-button style="margin-left: 20px; margin-top: 20px; background-color: #ADD8E6;"
+                type="button"
+                (click)="createAccount()">
+          Create account
+        </button>
+        <button mat-raised-button style="margin-left: 20px; margin-top: 20px; background-color: #ADD8E6;"
+                (click)="onClickConnect()">
+          <i class="fa fa-google"></i> Connect Google
+        </button>
+      </form>
+    </div>
+  </mat-card>
 </ng-template>
 
 <!-- User logged in -->
 <ng-template #authenticated>
-  <div *ngIf="auth.user | async as user">
-    <h3>Hi there, {{ user.displayName }}</h3>
-    <h4>{{user.email}}</h4>
-    <img [src]="user.imageId" style="height: 200px">
-    <a routerLink="/message-room">Go to chat</a>
-    <button (click)="onClickLogOut()">Logout</button>
-    <button (click)="onClickRemoveUser()">Remove user</button>
-    <button (click)="openDialog()">Change Profile Picture</button>
-  </div>
+  <mat-card class="vertical-center" style="height: 350px; width: 550px">
+    <div *ngIf="auth.user | async as user">
+      <h3>Hello, {{ user.displayName }}</h3>
+      <h4>{{user.email}}</h4>
+      <img class="center-element" [src]="user.imageId" style="height: 200px">
+      <div>
+        <button mat-raised-button style="margin-top: 20px; background-color: #ADD8E6;" (click)="onClickLogOut()">
+          Logout
+        </button>
+        <button mat-raised-button style="margin-left: 20px; margin-top: 20px; background-color: #ADD8E6;" (click)="onClickRemoveUser()">
+          Remove user
+        </button>
+        <button mat-raised-button style="margin-left: 20px; margin-top: 20px; background-color: #ADD8E6;" (click)="openDialog()">
+          Change Profile Picture
+        </button>
+        <button mat-raised-button style="margin-left: 20px; margin-top: 20px; background-color: #FFE5E5;" routerLink="/message-room">
+          Go to chat
+        </button>
+      </div>
+    </div>
+  </mat-card>
 </ng-template>

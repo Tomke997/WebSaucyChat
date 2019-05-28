@@ -6,6 +6,7 @@ import {UserProfileComponent} from "./user-profile/user-profile.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {FileModule} from "../file/file.module";
 import {SharedModule} from "../shared/shared.module";
+import {MatButtonModule, MatCardModule} from "@angular/material";
 
 @NgModule({
   declarations: [UserProfileComponent],
@@ -16,6 +17,8 @@ import {SharedModule} from "../shared/shared.module";
     ReactiveFormsModule,
     FileModule,
     SharedModule,
+    MatCardModule,
+    MatButtonModule,
   ],
   exports: [
     FormsModule,

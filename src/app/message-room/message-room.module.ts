@@ -11,7 +11,7 @@ import {NgxsModule} from '@ngxs/store';
 import {MessageState} from './ngsx-state/message.state';
 //import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin';
-import {MatButtonModule, MatSelectModule} from "@angular/material";
+import {MatButtonModule, MatCardModule, MatSelectModule} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import {MatButtonModule, MatSelectModule} from "@angular/material";
     //NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot(),
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [
     MessageService,

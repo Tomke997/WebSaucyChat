@@ -54,6 +54,7 @@ export class UserProfileComponent implements OnInit {
       console.log(error);
     });
   }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(ImageCropperDialogComponent, {
       width: '600px',
