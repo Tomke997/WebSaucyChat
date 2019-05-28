@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewChecked, AfterViewInit, Component, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {Observable} from "rxjs";
 import {Message} from "../../shared/model/message";
@@ -18,10 +18,11 @@ import {AuthService} from "../../core/shared/auth.service";
   styleUrls: ['./message-list.component.scss']
 })
 
-export class MessageListComponent implements OnInit {
+export class MessageListComponent implements OnInit, AfterViewChecked {
   @Select(MessageState.getMessagesList) messages: Observable<Message[]>;
 
   messageForm = new FormControl('');
+  container: HTMLElement;
   allMessagesArray: Message[] = [];
   croppedImage: string = '';
   messageToSend: string;
@@ -36,6 +37,11 @@ export class MessageListComponent implements OnInit {
   ngOnInit() {
     this.userId = this.auth.getCurrentUserId();
     this.store.dispatch(new GetMessages(this.allMessagesArray))
+  }
+
+  ngAfterViewChecked() {
+    this.container = document.getElementById("messageList");
+    this.container.scrollTop = this.container.scrollHeight;
   }
 
   /**
