@@ -10,7 +10,8 @@
           <div class="user_message">
             {{message.text}}
             <br>
-            <img [src]="message.pictureUri" *ngIf="!!message.imageId" style="width: 200px; height: 200px; margin-left: 20px; border-radius: 10px">
+            <img [src]="message.pictureUri" *ngIf="!!message.imageId"
+                 style="width: 200px; height: 200px; margin-left: 20px; border-radius: 10px">
             <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
           </div>
         </div>
@@ -19,27 +20,31 @@
           <div class="user_message">
             {{message.text}}
             <br>
-            <img [src]="message.pictureUri" *ngIf="!!message.imageId" style="width: 200px; height: 200px; margin-left: 20px; border-radius: 10px">
+            <img [src]="message.pictureUri" *ngIf="!!message.imageId"
+                 style="width: 200px; height: 200px; margin-left: 20px; border-radius: 10px">
             <div class="message_date" style="font-size: xx-small">{{message.time | date: 'dd/MM/yyyy HH:mm'}}</div>
           </div>
         </div>
       </div>
     </mat-card>
-    <mat-card style="margin-top: 20px;">
-      <form class="chat_form" (ngSubmit)="onSendClick()">
-        <div>
-      <textarea id="messageTextArea" (keyup)="submitTextOnKeyPress($event)" style="width:235px; height: auto" [formControl]="messageForm">
+    <mat-card style="height: 70px; width: 100%; margin-top: 20px;">
+      <div class="vertical-center">
+        <form class="chat_form" (ngSubmit)="onSendClick()">
+          <div>
+      <textarea id="messageTextArea" (keyup)="submitTextOnKeyPress($event)" style="width:235px; height: auto; margin-left: 17px;"
+                [formControl]="messageForm">
     </textarea>
-        </div>
-        <div>
-          <button mat-raised-button style="margin-left: 20px; background-color: #ADD8E6;" type="submit">
-            Send
-          </button>
-          <button mat-raised-button style="margin-left: 20px; background-color: #ADD8E6;" (click)="openDialog()">
-            Image
-          </button>
-        </div>
-      </form>
+          </div>
+          <div>
+            <button mat-raised-button style="margin-left: 20px; background-color: #ADD8E6;" type="submit">
+              Send
+            </button>
+            <button mat-raised-button style="margin-left: 20px; background-color: #ADD8E6;" (click)="openDialog()">
+              Image
+            </button>
+          </div>
+        </form>
+      </div>
     </mat-card>
   </mat-card>
 </div>
