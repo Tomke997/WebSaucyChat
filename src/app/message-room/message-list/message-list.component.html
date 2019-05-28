@@ -2,7 +2,7 @@
   Log out
 </button>
 <div class="chat_box">
-  <mat-card style="height: 750px; width: 485px; background: #FFE5E5">
+  <mat-card style="height: 750px; width: 485px; padding: 20px; background: #DC143C">
     <mat-card id="messageList" class="chat_logs">
       <div *ngFor="let message of messages | async">
         <div class="chat self" *ngIf="message.userId === this.userId">   <!--CURRENT USER-->
@@ -28,7 +28,7 @@
     <mat-card style="margin-top: 20px;">
       <form class="chat_form" (ngSubmit)="onSendClick()">
         <div>
-      <textarea id="messageTextArea" (keyup)="submitTextOnKeyPress($event)" style="width:240px; height: auto" [formControl]="messageForm">
+      <textarea id="messageTextArea" (keyup)="submitTextOnKeyPress($event)" style="width:235px; height: auto" [formControl]="messageForm">
     </textarea>
         </div>
         <div>

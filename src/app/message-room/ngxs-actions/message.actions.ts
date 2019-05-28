@@ -12,6 +12,12 @@ export class AddMessage {
   constructor(public payload: Message) {}
 }
 
+export class StopMessage {
+  static readonly type = '[Message] Stop'
+
+  constructor() {}
+}
+
 export class UpdateMessage {
   static readonly type = '[Message] Update'
 
