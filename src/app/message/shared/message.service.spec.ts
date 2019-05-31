@@ -104,10 +104,10 @@ describe('MessageService', () => {
     });
 
     it('should call update message', () => {
-      service.updateMessage('Message', 'id');
+      service.updateMessage({text: 'a'}, 'id');
       expect(service).toBeTruthy();
     });
-
+    
     it('should delete message', () => {
       service.deleteMessage('id');
       expect(service).toBeTruthy();
